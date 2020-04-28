@@ -1,0 +1,14 @@
+hello world!
+
+你好，世界!
+
+当你尝试这样做时可能会出各种各样的错误。
+如果解释器无法找到你的文件，你会看到类似这样的错误
+
+
+
+f = open('document.txt')
+Traceback (most recent call last):
+File "<pyshell#7>", line 1, in -toplevel-
+f = open('document.txt')
+IOError: [Errno 2] No such file or directory: 'document.txt'
