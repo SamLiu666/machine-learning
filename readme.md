@@ -1,6 +1,6 @@
 # 动手学机器学习
 
-此项目用于收集入门级别的机器学习项目，实现机器学习算法。
+此项目用于学习机器学习原理，公式推导，实践入门级别的机器学习项目，实现机器学习算法。
 
 内容简介：
 
@@ -31,6 +31,14 @@
 - 训练误差和测试误差接近未出现过拟合情况，如有过拟合情况，建议采取后剪枝方法
 
 **Decison Trees** 实现了正态分布数据的分类
+
+### 随机森林
+
+可应用于回归问题，也可应用于分类问题。随机森林，可理解为组合一些决策树
+
+![随机森冷](https://i.ytimg.com/vi/goPiwckWE9M/maxresdefault.jpg)
+
+
 
 ## 朴素贝叶斯 Naive Bayes
 
@@ -64,9 +72,39 @@ P(x_{i}|y_{k})=\frac{N_{y_{k},x_{i}}+\alpha}{N_{y_{k}}+n\alpha}
 
 
 ## K近邻  K Neaerest Neighbour
+
+KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一种懒惰算法（不需要为建立模型训练数据）。一般使用欧几里得或者曼哈顿举例
+
+*使用交叉验证取K值* 
+
 ## 回归  Regression 逻辑回归
 
+解决分类问题，一般是离散分类问题
+
+**Sigmoid 函数**  
+![sigmoid](https://miro.medium.com/max/970/1*Xu7B5y9gp0iL5ooBj7LtWw.png)
+
+决策边界，>=0.5 class==1, <0.5 class=0 
+
+前提条件，二项式多项式。例子：预测明天是否会下雨
+
 ## 支持向量机 Support Vector Machines
+
+[Kaggle SVM torturial](https://www.kaggle.com/prashant111/svm-classifier-tutorial)
+
+可应用于分类和回归问题。SVM可用于线性分类问题，也可以通过核方法用于非线性分类问题
+
+![svm](https://static.wixstatic.com/media/8f929f_7ecacdcf69d2450087cb4a898ef90837~mv2.png)
+
+最大边界超平面
+
+![margin](https://static.packt-cdn.com/products/9781783555130/graphics/3547_03_07.jpg)
+
+核方法，超平面映射
+
+![kernel](http://www.aionlinecourse.com/uploads/tutorials/2019/07/11_21_kernel_svm_3.png)
+
+核 将低纬度的数据，转换到高维度的空间 ![和函数](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTodZptqcRor0LGo8Qn7_kJB9n9BACMt6jgIPZ4C3g_rgh_uSRZLQ&s)
 
 
 
