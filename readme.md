@@ -106,7 +106,7 @@ KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一�
 
 核 将低纬度的数据，转换到高维度的空间 ![和函数](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTodZptqcRor0LGo8Qn7_kJB9n9BACMt6jgIPZ4C3g_rgh_uSRZLQ&s)
 
-
+分类：**linear kernel : K(xi , xj ) = xiT xj** ,  **Polynomial kernel : K(xi , xj ) = (γxiT xj + r)d , γ > 0** , **Radial Basis Function Kerne** ,   **sigmoid kernel : k (x, y) = tanh(αxTy + c)**
 
 # 无监督学习
 ## 聚类 clustering problem
