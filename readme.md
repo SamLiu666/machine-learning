@@ -113,5 +113,29 @@ KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一�
 ## 相似度量 Similarity measures
 ## K均值算法 The K-means algorithm
 
-# 强化学习 
+# 深度学习
+
+# 相关概念
+
+## 激活函数
+
+### softmax
+
+### Relu
+
+$$ReLU(x)=max(x,0)$$
+
+### Sigmoid
+
+$$sigmoid(x)=\frac{1}{1+exp(−x)}$$
+
+### tanh
+
+$$tanh(x)=\frac{1+exp(−2x)}{1+exp(−2x)}$$
+
+## 模型复杂度
+
+$$y=b+\sum_{k=1}^{K} {x^k w_k }$$
+
+多项式函数拟合的目标是找一个KK*K*阶多项式函数,*w**k*是模型的权重参数，bb*b*是偏差参数。与线性回归相同，多项式函数拟合也使用平方损失函数。
 
