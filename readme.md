@@ -198,6 +198,52 @@ $$\Large \text{ARI} = \frac{\text{RI} - E[\text{RI}]}{\max(\text{RI}) - E[\text{
 
 # 深度学习
 
+定义：直接从数据中获取信息
+
+逻辑回归，计算图，参数初始化， Forward Propagation（正向传播）
+
+Optimization Algorithm with Gradient Descent - 梯度下降优化算法
+
+## 逻辑回归
+
+## 神经网络
+
+ANN Artificial Neural Network 
+
+**交叉熵损失函数**
+
+$$J = - \frac{1}{m} \sum\limits_{i = 0}^{m} \large\left(\small y^{(i)}\log\left(a^{[2] (i)}\right) + (1-y^{(i)})\log\left(1- a^{[2] (i)}\right)  \large  \right) \small$$
+
+
+
+## 卷积神经网络
+
+convolutional neural network--CNN
+
+**相关运算**
+
+![cnn](https://tangshusen.me/Dive-into-DL-PyTorch/img/chapter05/5.1_correlation.svg)
+
+$$0×0+1×1+3×2+4×3=19\\1×0+2×1+4×2+5×3=25\\3×0+4×1+6×2+7×3=37\\4×0+5×1+7×2+8×3=43$$
+
+**多输入通道**
+
+![c](https://tangshusen.me/Dive-into-DL-PyTorch/img/chapter05/5.3_conv_multi_in.svg)
+
+**池化池**
+
+![cc](https://tangshusen.me/Dive-into-DL-PyTorch/img/chapter05/5.4_pooling.svg)
+
+取最大值：$$max(0,1,3,4)=4,max(1,2,4,5)=5,max(3,4,6,7)=7,max(4,5,7,8)=8.$$
+
+### 卷积神经网络
+
+![ccc](https://tangshusen.me/Dive-into-DL-PyTorch/img/chapter05/5.5_lenet.png)
+
+### 
+
+* LeNet 模型
+
 # 相关概念
 
 ## 激活函数
@@ -222,3 +268,24 @@ $$y=b+\sum_{k=1}^{K} {x^k w_k }$$
 
 多项式函数拟合的目标是找一个KK*K*阶多项式函数,*w**k*是模型的权重参数，bb*b*是偏差参数。与线性回归相同，多项式函数拟合也使用平方损失函数。
 
+## 正则化
+
+### 岭回归 
+
+Ridge regression: 也叫L2 正则化，
+
+$$ Ridge regression lost fuction = OLS + alpha * sum(parameter^2)$$
+
+### 拉素回归
+
+Lasso regression: 也叫L1 正则化
+
+$$Lasso regression lost fuction = OLS + alpha *$$
+
+## ROC
+
+**接收者操作特征曲线**（**receiver operating characteristic curve**，或者叫**ROC曲线**）是一种坐标图式的分析工具，用于 (1) 选择最佳的信号侦测模型、舍弃次佳的模型。 (2) 在同一模型中设定最佳阈值。
+
+## 调参
+
+HYPERPARAMETER TUNING 
