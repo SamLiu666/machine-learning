@@ -200,11 +200,11 @@ $$\Large \text{ARI} = \frac{\text{RI} - E[\text{RI}]}{\max(\text{RI}) - E[\text{
 
 定义：直接从数据中获取信息
 
+神经网络为基础内容
+
 逻辑回归，计算图，参数初始化， Forward Propagation（正向传播）
 
 Optimization Algorithm with Gradient Descent - 梯度下降优化算法
-
-## 逻辑回归
 
 ## 神经网络
 
@@ -244,11 +244,25 @@ $$0×0+1×1+3×2+4×3=19\\1×0+2×1+4×2+5×3=25\\3×0+4×1+6×2+7×3=37\\4×0+5
 
 * LeNet 模型
 
+## 循环神经网络
+
+RNN--Recurrent Neural Network： 本质上是重复ANN，从先前的非线性激活函数传递信息
+
+## 长短期记忆
+
+Long-Short Term Memory :
+
+**Steps of LSTM:**
+
+
+
 # 相关概念
 
 ## 激活函数
 
 ### softmax
+
+
 
 ### Relu
 
@@ -289,3 +303,4 @@ $$Lasso regression lost fuction = OLS + alpha *$$
 ## 调参
 
 HYPERPARAMETER TUNING 
+
