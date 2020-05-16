@@ -110,7 +110,7 @@ KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一�
 
 # 无监督学习
 
-**定义** 从无标签的数据中获取信息  $$ f: x  {->} y$$
+**定义** 从无标签的数据中获取信息  $$ f: x  {->} y$$ ，发现输入之间的练习，不依靠任何学习过程中的任何反馈
 
 分类
 
@@ -119,6 +119,10 @@ KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一�
   - 参数密度估计： 先假设服从某个概率分布，然后用样本训练去估计参数
   - 非参数估计： 利用训练样本对密度进行估计
 - 聚类： 将一组样本按照一定准则划分到不同组（簇），通用准则-组内样本相似性高于组间样本的相似性，常见包括：K-Means等
+
+## 相似度计算
+
+基于勾股定理（集合距离）
 
 ## 主成分分析法 PCA -Principal Component Analysis
 
@@ -166,18 +170,6 @@ N - N个训练样本， K - 落入R区域的样本数量服从二项分布， �
 * 核密度估计（Kernel Density Estimation）
 * K 近邻方法
 
-## 聚类 Clustering
-
-### K均值算法 The K-means algorithm
-
-$$\Large J(C) = \sum_{k=1}^K\sum_{i~\in~C_k} ||x_i - \mu_k|| \rightarrow \min\limits_C$$
-
-C-类集合中的K簇的具体类，
-
-$$\Large D(k) = \frac{|J(C_k) - J(C_{k+1})|}{|J(C_{k-1}) - J(C_k)|}  \rightarrow \min\limits_k$$
-
-
-
 ### 相似度量 Similarity measures
 
 $$ s(x_i, x_j) = - ||x_i - x_j||^{2} $$  相似特性用负数的距离平方表示
@@ -194,13 +186,41 @@ ARI指标
 
 $$\Large \text{ARI} = \frac{\text{RI} - E[\text{RI}]}{\max(\text{RI}) - E[\text{RI}]}$$ 
 
+## 簇类 Clustering
 
+### K均值算法 The K-means algorithm
+
+$$\Large J(C) = \sum_{k=1}^K\sum_{i~\in~C_k} ||x_i - \mu_k|| \rightarrow \min\limits_C$$
+
+随机给定初始中心点，计算数据中每一个点到中心点的距离，重复直到簇类中心点和数据的均值据购销
+
+C-类集合中的K簇的具体类，
+
+$$\Large D(k) = \frac{|J(C_k) - J(C_{k+1})|}{|J(C_{k-1}) - J(C_k)|}  \rightarrow \min\limits_k$$
+
+## 神经网络 Neural Network
+
+Winner-Take-All Networks：输出值概率高对应的权重值增加
+
+Counter-Propagation Networks
+
+Kohonen’s Self-Organising Feature Maps SOMs
+
+
+
+# 半监督学习
+
+semi-supervised learning: 监督学习和无监督学习的混合
 
 # 深度学习
 
-定义：直接从数据中获取信息
+定义：直接从数据中获取信息，基于人工神经网络（ANN），属于机器学习的一部分 [扩展](https://www.rsipvision.com/exploring-deep-learning/)
 
-神经网络为基础内容
+![dl](https://www.rsipvision.com/wp-content/uploads/2015/04/Slide5.png)
+
+![dlll](https://www.rsipvision.com/wp-content/uploads/2015/04/Slide4.png)
+
+需要大量数据，训练时间较长，小样本数据性能不如机器学习
 
 逻辑回归，计算图，参数初始化， Forward Propagation（正向传播）
 
@@ -208,13 +228,17 @@ Optimization Algorithm with Gradient Descent - 梯度下降优化算法
 
 ## 神经网络
 
-ANN Artificial Neural Network 
+ANN Artificial Neural Network：  使机器像人脑一样，能够从模式中学习，能够基于学习内容推导新情况的状态
 
 **交叉熵损失函数**
 
 $$J = - \frac{1}{m} \sum\limits_{i = 0}^{m} \large\left(\small y^{(i)}\log\left(a^{[2] (i)}\right) + (1-y^{(i)})\log\left(1- a^{[2] (i)}\right)  \large  \right) \small$$
 
+### 优点
 
+-  Generalisability 普遍性：对于未出现过的数据预测更准确
+-  Fault Tolerance 容错性：对噪声容忍度更大
+- Determine what is to be classified or predicted 
 
 ## 卷积神经网络
 
@@ -254,7 +278,9 @@ Long-Short Term Memory :
 
 **Steps of LSTM:**
 
+# 强化学习
 
+reinforcement learning:  通过环境判断获取信息是否正确，不断调整获取答案的模型
 
 # 相关概念
 
@@ -268,13 +294,19 @@ Long-Short Term Memory :
 
 $$ReLU(x)=max(x,0)$$
 
+最常用的深度学习激活函数，只能在隐藏层使用
+
 ### Sigmoid
 
 $$sigmoid(x)=\frac{1}{1+exp(−x)}$$
 
+通常应用在分类问题，避免梯度消失问题
+
 ### tanh
 
 $$tanh(x)=\frac{1+exp(−2x)}{1+exp(−2x)}$$
+
+避免梯度消失问题
 
 ## 模型复杂度
 
@@ -284,23 +316,54 @@ $$y=b+\sum_{k=1}^{K} {x^k w_k }$$
 
 ## 正则化
 
-### 岭回归 
+Regularization： 欠拟合需要更好的训练数据，过拟合需要更好的泛化能力， 目的是为了优化这两种情况
 
-Ridge regression: 也叫L2 正则化，
+### 拉素回归  L1-  lasso
 
-$$ Ridge regression lost fuction = OLS + alpha * sum(parameter^2)$$
-
-### 拉素回归
-
-Lasso regression: 也叫L1 正则化
+Lasso regression: 也叫L1 正则化， 使用绝对值，数据中含有许多不相关数据
 
 $$Lasso regression lost fuction = OLS + alpha *$$
 
-## ROC
+### 岭回归 L2 - weight decay
 
-**接收者操作特征曲线**（**receiver operating characteristic curve**，或者叫**ROC曲线**）是一种坐标图式的分析工具，用于 (1) 选择最佳的信号侦测模型、舍弃次佳的模型。 (2) 在同一模型中设定最佳阈值。
+Ridge regression: 也叫L2 正则化，使用平方值，惩罚较大的权重值，对于大部分分类和预测问题
+
+$$ Ridge regression lost fuction = OLS + alpha * sum(parameter^2)$$
+
+## Dropout
+
+减少了过拟合，降低了训练误差和测试误差。 原理：在训练中随机丢失一些神经元，每一个神经元相互独立固定概率 p
+
+超参数一般选择p=0.2  或 p=0.5，神经元丢失概率
 
 ## 调参
 
 HYPERPARAMETER TUNING 
 
+## 欠拟合过拟合
+
+欠拟合：在训练数据上表现不好，
+
+过拟合：在训练数据上表现很好，测试数据表现不佳，泛化能力不行
+
+## Confusion Matrix
+
+• Recall (also called sensitivity or the true positive rate) 召回率
+= TP / (TP+FN) ( = 636 / (636+64) = 90.9%)
+– A measure of a classifier’s completeness.
+– A classifier that produces no false negatives has a recall of 1.0.
+• Precision (also called the positive predictive value) 精度
+= TP / (TP+FP) ( = 636 / (636+160) = 79.9%)
+– A measure of a classifier’s exactness.
+– A classifier that produces no false positives has a precision of 1.0.
+
+• TP: the classifier predicts it is a YES and it truly is a YES.
+• FN: the classifier predicts it is a NO but it actually is a YES.
+• FP: the classifier predicts it is a YES but it actually is a NO.
+• TN: the classifier predicts it is a NO and it truly is a NO.
+
+## ROC curve or AUC-ROC curve
+
+**接收者操作特征曲线**（**receiver operating characteristic curve**，或者叫**ROC曲线**）是一种坐标图式的分析工具，用于 (1) 选择最佳的信号侦测模型、舍弃次佳的模型。 (2) 在同一模型中设定最佳阈值。
+
+.演示二进制文件性能的图形图表具有不同决策(识别)阈值的分类器设置。
