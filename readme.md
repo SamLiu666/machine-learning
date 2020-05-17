@@ -402,41 +402,6 @@ HYPERPARAMETER TUNING
 
 ## NLP
 
-### 词嵌入
-
-one-hot 构造比较简单，但是无法准确表达不同词之间的相似度
-
-word2vec: - word embedding: 
-
-- skip-gram - 跳字模型
-- CBOW - continuous bag of words ： 连续词袋模型
-
-#### 跳字模型
-
-在跳字模型中，每个词被表示成两个dd*d*维向量，用来计算条件概率。
-
-例子如下：假设文本序列是“the”“man”“loves”“his”“son”。以“loves”作为中心词，
-
-$$P(\textrm{`the"},\textrm{`man"},\textrm{`his"},\textrm{`son"}\mid\textrm{``loves"}).$$
-
-设背景窗口大小为2。给定中心词生成背景词的条件概率可以通过对向量内积做softmax运算而得到：$$p(w_0 | w_c) = \frac{exp(u^T v_c)}{\sum exp(u_i^T v_c)} $$
-
-损失函数：$$ - \sum_{t=1}^{T} \sum_{-m \leq j \leq m,\ j \neq 0} \text{log}, P(w^{(t+j)} \mid w^{(t)}).$$
-
-#### 连续词袋模型
-
-$$P(\textrm{`loves"}\mid\textrm{`the"},\textrm{`man"},\textrm{`his"},\textrm{``son"}).$$
-
-二次采样：$$ P(w_i) = \max\left(1 - \sqrt{\frac{t}{f(w_i)}}, 0\right), $$
-
-### Glove 全局向量的词嵌入
-
-### 编码器-解码器 （seq2seq）
-
-![decode](https://trickygo.github.io/Dive-into-DL-TensorFlow2.0/img/chapter10/10.9_seq2seq.svg)
-
-
-
 ## CV
 
 ## RS
