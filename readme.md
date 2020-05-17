@@ -262,21 +262,51 @@ $$0×0+1×1+3×2+4×3=19\\1×0+2×1+4×2+5×3=25\\3×0+4×1+6×2+7×3=37\\4×0+5
 
 ### 卷积神经网络
 
+**LeNet 模型**
+
 ![ccc](https://tangshusen.me/Dive-into-DL-PyTorch/img/chapter05/5.5_lenet.png)
 
-### 
+**AlexNet**
 
-* LeNet 模型
+![model](https://tangshusen.me/Dive-into-DL-PyTorch/img/chapter05/5.6_alexnet.png)
+
+
 
 ## 循环神经网络
 
-RNN--Recurrent Neural Network： 本质上是重复ANN，从先前的非线性激活函数传递信息
+RNN--Recurrent Neural Network： 本质上是重复ANN，从先前的非线性激活函数传递信息， 语言模型
+
+$$ p(w_1, w_2, w_3, w_4) = p(w_1)p(w_2|w_1)p(w_3|w_1,w_2)p(w_4|w_1,w_2,w_3)$$
+
+n元语法- n-gram：马尔可夫假设是指一个词的出现只与前面nn*n*个词相关，即nn*n*阶马尔可夫链（Markov chain of order nn*n*）。
+
+一元模型- $$ p(w_1, w_2, w_3, w_4) = p(w_1)p(w_2)p(w_3)p(w_4)$$
+
+二元模型：$$ p(w_1, w_2, w_3, w_4) = p(w_1)p(w_2|w_1)p(w_3|w_2)p(w_4|w_3)$$
+
+三元模型：$$ p(w_1, w_2, w_3, w_4) = p(w_1)p(w_2|w_1)p(w_3|w_1,w_2)p(w_4|w_1,w_2,w_3)$$
+
+![yicang](https://trickygo.github.io/Dive-into-DL-TensorFlow2.0/img/chapter06/6.2_rnn.svg)
+
+隐藏状态的RNN
+
+### 基于字符级RNN的语言模型
+
+![RNN](https://trickygo.github.io/Dive-into-DL-TensorFlow2.0/img/chapter06/6.2_rnn-train.svg)
+
+
 
 ## 长短期记忆
 
-Long-Short Term Memory :
+Long-Short Term Memory :LSTM 中引入了3个门，即输入门（input gate）、遗忘门（forget gate）和输出门（output gate），以及与隐藏状态形状相同的记忆细胞（某些文献把记忆细胞当成一种特殊的隐藏状态），从而记录额外的信息
+
+![ss](https://trickygo.github.io/Dive-into-DL-TensorFlow2.0/img/chapter06/6.8_lstm_0.svg)
 
 **Steps of LSTM:**
+
+LSTM 的循环神经网络
+
+![lstm](https://github.com/TrickyGo/Dive-into-DL-TensorFlow2.0/raw/master/docs/img/chapter06/6.5.png)
 
 # 强化学习
 
@@ -367,3 +397,49 @@ HYPERPARAMETER TUNING
 **接收者操作特征曲线**（**receiver operating characteristic curve**，或者叫**ROC曲线**）是一种坐标图式的分析工具，用于 (1) 选择最佳的信号侦测模型、舍弃次佳的模型。 (2) 在同一模型中设定最佳阈值。
 
 .演示二进制文件性能的图形图表具有不同决策(识别)阈值的分类器设置。
+
+# 应用
+
+## NLP
+
+### 词嵌入
+
+one-hot 构造比较简单，但是无法准确表达不同词之间的相似度
+
+word2vec: - word embedding: 
+
+- skip-gram - 跳字模型
+- CBOW - continuous bag of words ： 连续词袋模型
+
+#### 跳字模型
+
+在跳字模型中，每个词被表示成两个dd*d*维向量，用来计算条件概率。
+
+例子如下：假设文本序列是“the”“man”“loves”“his”“son”。以“loves”作为中心词，
+
+$$P(\textrm{`the"},\textrm{`man"},\textrm{`his"},\textrm{`son"}\mid\textrm{``loves"}).$$
+
+设背景窗口大小为2。给定中心词生成背景词的条件概率可以通过对向量内积做softmax运算而得到：$$p(w_0 | w_c) = \frac{exp(u^T v_c)}{\sum exp(u_i^T v_c)} $$
+
+损失函数：$$ - \sum_{t=1}^{T} \sum_{-m \leq j \leq m,\ j \neq 0} \text{log}, P(w^{(t+j)} \mid w^{(t)}).$$
+
+#### 连续词袋模型
+
+$$P(\textrm{`loves"}\mid\textrm{`the"},\textrm{`man"},\textrm{`his"},\textrm{``son"}).$$
+
+二次采样：$$ P(w_i) = \max\left(1 - \sqrt{\frac{t}{f(w_i)}}, 0\right), $$
+
+### Glove 全局向量的词嵌入
+
+### 编码器-解码器 （seq2seq）
+
+![decode](https://trickygo.github.io/Dive-into-DL-TensorFlow2.0/img/chapter10/10.9_seq2seq.svg)
+
+
+
+## CV
+
+## RS
+
+
+
