@@ -20,33 +20,80 @@
 
 ## 决策树 Decision Trees
 
+[补充](https://blog.csdn.net/weixin_36586536/article/details/80468426)
+
 依据分类原则可分为两类：基尼系数，熵
+
+| 算法 | 划分标准   |
+| ---- | ---------- |
+| ID3  | 信息增益   |
+| C4.5 | 信息增益率 |
+| CART | 基尼系数   |
 
 ![1](http://www.learnbymarketing.com/wp-content/uploads/2016/02/entropy-formula.png)
 ![2](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYHkcmZKKp2sJN1HpHvw-NgqbD9EnapnbXozXRgajrSGvEnYy&s)
 
-**DT_project** : 根据汽车数据( car_evaluation.csv，采用.OrdinalEncoder 按类编码) 建立的两棵树，进行汽车安全性的预测：
+### 三要素
 
-- 两者预测结果相近，可能是数据样本较少
-- 训练误差和测试误差接近未出现过拟合情况，如有过拟合情况，建议采取后剪枝方法
+#### 特征选择
+
+有三种方法进行特征选择：ID3: 信息增益，C4.5: 信息增益比，CART: 基尼系数
+
+ $$ 信息熵：H(D) = - \sum_{k=1}^k \frac{|C_k|}{|D|} log_2 \frac{|C_k|}{|D|} \\ 条件熵： H(D|A) = \sum_{i=1}^n \frac{|D_i|}{|D|} H(D_i) \\ 信息增益： g(D,A)=H(D)-H(D|A) $$
+
+**信息增益比本质：**在信息增益的基础之上乘上一个惩罚参数。特征个数较多时，惩罚参数较小；特征个数较少时，惩罚参数较大。
+
+ $$ 信息增益比 = 惩罚参数 \times 信息增益 \ 信息增益比：g_R(D,A) = \frac{g(D,A)}{H(D)} $$
+
+CART 既可以用于分类，也可以用于回归:
+
+ $$ Gini(D) = \sum_{k=1}^{|K|}p_k(1-p_k)= 1 - \sum_{k=1}^{K} p_k^2 $$ 
+
+$$ Gini(D, A=a) = \frac{D_1}{D}Gini(D_1) + \frac{D_2}{d} Gini(D_2) $$
+
+#### 剪枝处理
+
+决策树学习算法用来**解决过拟合**的一种办法
+
+- 预剪枝：决策树生成过程中，在每个节点划分前先估计其划分后的泛化性能， 如果不能提升，则停止划分，将当前节点标记为叶结点。
+- 后剪枝：生成决策树以后，再自下而上对非叶结点进行考察， 若将此节点标记为叶结点可以带来泛化性能提升，则修改之。
 
 **Decison Trees** 实现了正态分布数据的分类
 
 ### 随机森林
 
-可应用于回归问题，也可应用于分类问题。随机森林，可理解为组合一些决策树
+可应用于回归问题，也可应用于分类问题。随机森林，可理解为组合一些决策树，**根据多个训练集与特征集合来建立多颗决策树，然后进行投票决策**
+
+随机森林的最终目的是建立 m 颗决策树，而每颗决策树的建立过程如下：
+
+- 如果训练集大小为N，对于每棵树而言，**随机**且有放回地从训练集中的抽取N个训练样本，作为该树的训练集。
+- 如果每个样本的特征维度为M，指定一个常数m<<M，**随机**地从M个特征中选取m个特征子集，每次树进行分裂时，从这m个特征中选择最优的
+- 每棵树都尽最大程度的生长，并且没有剪枝过程。
+
+随机森林中的随性性指的是：**数据采样的随机性与特征采用的随机性。** 这两个随机性的引入对随机森林的分类性能直观重要，它们使得随机森林不容易陷入过拟合，且具有很好的抗噪能力
 
 ![随机森冷](https://i.ytimg.com/vi/goPiwckWE9M/maxresdefault.jpg)
 
-
+通过交叉验证来调整树的数量，解决过拟合问题
 
 ## 朴素贝叶斯 Naive Bayes
 
 应用NLP，中的N-gram， 前提是要时间相互独立，概率之间才可连乘，一般将连乘转为log，连加
 
-**bayes_salary**: 构建朴素贝叶斯分类器，预测一个人的薪水是否达到50K/Y： 采用onehot编码
+条件概率：  $$ P(X|Y) = \frac{P(X,Y)}{P(Y)} $$
 
-依据数据类型可分为三类：
+- 先验概率：表示事件发生前的预判概率，一般都是单独事件发生的概率，如 P(A)
+- 后验概率：依据数据类型可分为三类：基于先验概率求得的**反向条件概率**，形式上与条件概率相同（若 `P(X|Y)` 为正向，则 `P(Y|X)` 为反向）
+
+贝叶斯公式： $$ P(Y|X) = \frac{P(X|Y) P(Y)}{P(X)} \ $$
+
+- P(Y) 叫做**先验概率**，意思是事件X发生之前，我们对事件Y发生的一个概率的判断
+- P(Y|X) 叫做**后验概率**，意思是时间X发生之后，我们对事件Y发生的一个概率的重新评估
+- P(Y,X) 叫做**联合概率**， 意思是事件X与事件Y同时发生的概率。
+
+条件独立假设： $$ P(x|c) = p(x_1, x_2, \cdots x_n | c) = \prod_{i=1}^Np(x_i | c) $$  -》简化运算
+
+
 
 * 高斯贝叶斯
 
@@ -88,11 +135,58 @@ KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一�
 
 前提条件，二项式多项式。例子：预测明天是否会下雨
 
+### 逻辑回归
+
+- 本质极大似然估计：maximum likelihood estimation，缩写为MLE
+
+- 逻辑回归的激活函数：Sigmoid
+
+  $$ h_\theta(x) = sigmoid(\theta^T X) = \frac{1}{1 + e^{-\theta^T X}} $$
+
+- 逻辑回归的代价函数：交叉熵
+
+  $$ Cost(h_{\theta}(x),y) = \begin{cases} -log(h_{\theta(x)}) & if , y = 1\ -log(1-h_{\theta(x)}) & if , y = 0 \end{cases} $$
+
+求解：
+
+$$ J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right] $$
+
+ $$ J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right] + \frac{\lambda}{2m} \sum_{j=1}^{m}\theta_j^2 $$  （L2 正则化）
+
+使用梯度下降算法去求解最小值时对应的参数
+
+### 线性回归
+
+ $$ 线性回归：f(x)=\theta ^{T}x \ 逻辑回归：f(x)=P(y=1|x;\theta )=g(\theta ^{T}x)， \quad g(z)=\frac{1}{1+e^{-z}} $$
+
+线性回归其参数计算方式为**最小二乘法**， 逻辑回归其参数更新方式为**极大似然估计**。
+
+- sigmoid : $$ g(z) = \frac{1}{1+e^{-z}} \ g'(z) = g(z)(1-g(z)) $$
+- LR 的定义： $$ h_{\theta}(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^Tx}} $$
+- 损失函数： $$ J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right] $$
+
+- 岭回归本质上是 **线性回归 + L2 正则化**。 $$ \hat{h}*{\theta}(x) = h*{\theta}(x) + \lambda \sum_i w_i^2 $$
+
+- Lasso 回归的本质是 **线性回归 + L1 正则化**。 $$ \hat{h}*{\theta}(x) = h*{\theta}(x) + \lambda \sum_i |w_i| $$
+- ElasticNet 回归 本质上是线性回归 + L1正则化 + L2 正则化。
+
+最小二乘法估计：
+
+$$ X = (x_1, ..., x_N)^T \ Y = (y_1, ..., y_N)^T $$
+
+$$ \begin{align} L(w) &= \sum_{i=1}^N ||w^Tx_i - y_i ||^2 \ &= \sum_{i=1}^N (w^Tx_i - y_i)^2 \ &= \begin{pmatrix} w^Tx_1 - y_1 & ... & w^Tx_N - y_N \end{pmatrix} \begin{pmatrix} w^Tx_1 - y_1 \ ... \ w^Tx_N - y_N \end{pmatrix} \end{align} $$
+
+其中有： $$ \begin{align} \begin{pmatrix} w^Tx_1 - y_1 & ... & w^Tx_N - y_N \end{pmatrix} = w^T \begin{pmatrix} x_1 & ... & x_N \end{pmatrix} - \begin{pmatrix} y_1 & ... & y_N \end{pmatrix} &= w^TX^T - Y^T \end{align} $$ $$\begin{align} \begin{pmatrix} w^Tx_1 - y_1 \ ... \ w^Tx_N - y_N \end{pmatrix} = \begin{pmatrix} x_1 \ ... \ x_N \end{pmatrix}w - \begin{pmatrix} y_1 \ ... \ y_N \end{pmatrix} = Xw-Y \end{align}$$
+
+那 么，最终就得到： $$ \begin{align} L(w) = (w^TX^T - Y^T)(Xw + Y) \ &= w^TX^TXw - w^TX^TY - Y^TXw - Y^TY \end{align} $$ 考虑到 $w^TX^TY$ 与 $Y^TXw$ 的结果其实都是一维实数且二者为转置，因此，二者的值相等， 那么就有： $$ L(w) = w^TX^TXw - 2w^TX^TY - Y^TY $$ 那么就有： $$ \hat{w} = argmin , L(w) \ \frac{\delta L(w)}{\delta w} = 2X^TXw - 2X^TY = 0 $$ 从而就得到： $$ w = (X^TX)^{-1}X^TY $$
+
+
+
 ## 支持向量机 Support Vector Machines
 
 [Kaggle SVM torturial](https://www.kaggle.com/prashant111/svm-classifier-tutorial)
 
-可应用于分类和回归问题。SVM可用于线性分类问题，也可以通过核方法用于非线性分类问题
+SVM 三宝： **间隔，对偶，核技巧**。它属于**判别模型**，可应用于分类和回归问题。SVM可用于线性分类问题，也可以通过核方法用于非线性分类问题
 
 ![svm](https://static.wixstatic.com/media/8f929f_7ecacdcf69d2450087cb4a898ef90837~mv2.png)
 
@@ -107,6 +201,19 @@ KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一�
 核 将低纬度的数据，转换到高维度的空间 ![和函数](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTodZptqcRor0LGo8Qn7_kJB9n9BACMt6jgIPZ4C3g_rgh_uSRZLQ&s)
 
 分类：**linear kernel : K(xi , xj ) = xiT xj** ,  **Polynomial kernel : K(xi , xj ) = (γxiT xj + r)d , γ > 0** , **Radial Basis Function Kerne** ,   **sigmoid kernel : k (x, y) = tanh(αxTy + c)**
+
+- 线性可分
+
+$D_0$ 和 $D_1$ 是 n 维空间中的两个点集， 如果存在 n 维向量 $w$ 和实数 $b$ ， 使得：$$ wx_i +b > 0; \quad x_i \in D_0 \ wx_j + b < 0; \quad x_j \in D_1 $$ 则称 $D_0$ 与 $D_1$ 线性可分。
+
+- 最大间隔超平面
+
+能够将 $D_0$ 与 $D_1$ 完全正确分开的 $wx+b = 0$ 就成了一个超平面。
+
+为了使得这个超平面更具鲁棒性，我们会去找最佳超平面，以最大间隔把两类样本分开的超平面，也称之为**最大间隔超平面**。
+
+- 两类样本分别分割在该超平面的两侧
+- 两侧距离超平面最近的样本点到超平面的距离被最大化了
 
 # 无监督学习
 
@@ -124,7 +231,9 @@ KNN 是一种应用于分类问题和逻辑回归的非参数算法，也是一�
 
 基于勾股定理（集合距离）
 
-## 主成分分析法 PCA -Principal Component Analysis
+## 主成分分析法 
+
+[PCA -Principal Component Analysis ](https://www.matongxue.com/madocs/1025/)
 
 定义：数据降维方法，使得在转换后的空间数据的方差最大
 
