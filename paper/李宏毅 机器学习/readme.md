@@ -2,5 +2,3 @@
 
 [学生笔记](https://github.com/Sakura-gh/ML-notes)
 
-# 学习记录
-
