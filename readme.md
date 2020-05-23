@@ -49,7 +49,7 @@ CART 既可以用于分类，也可以用于回归:
 
  $$ Gini(D) = \sum_{k=1}^{|K|}p_k(1-p_k)= 1 - \sum_{k=1}^{K} p_k^2 $$ 
 
-$$ Gini(D, A=a) = \frac{D_1}{D}Gini(D_1) + \frac{D_2}{d} Gini(D_2) $$
+$$ Gini(D, A=a) = \frac{D_1}{D}Gini(D_1) + \frac{D_2}{D} Gini(D_2) $$
 
 #### 剪枝处理
 
