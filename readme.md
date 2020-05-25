@@ -405,19 +405,80 @@ n元语法- n-gram：马尔可夫假设是指一个词的出现只与前面nn*n*
 
 ![RNN](https://trickygo.github.io/Dive-into-DL-TensorFlow2.0/img/chapter06/6.2_rnn-train.svg)
 
+RNN ：对应的类型- N-N, N-1, 1-N, N-M
 
+其中N-M 又称为 Encoder-Decoder 模型，也叫Seq2Seq
+
+仔细分析普通的RNN模型，我们发现它有一个缺陷：它只能记住前面的输入对它的影响，而不能将后面的输入对它的影响记忆下来。
+
+于是产生了双向RNN。
+
+### RNN 梯度消失问题
+
+RNN一个最大的缺陷就是**梯度消失与梯度爆炸问题，** 由于这一缺陷，使得RNN在长文本中难以训练， 这才诞生了LSTM及各种变体。
+
+梯度消失和梯度爆炸产生问题：
+
+1. 步伐太大，权重更新太快，可适当减少学习率的大小
+2. 学习不稳地，无法获取最优参数，无法从数据中学习，甚至权重变为NaN而无法更新
+3. 使i网络不稳定
+
+原因：sigmoid 反向传播求导的函数值随层数增加，越来越小
+
+无论是梯度消失还是梯度爆炸，都是**源于网络结构太深**，造成网络权重不稳定，从本质上来讲是**因为梯度反向传播中的连乘效应**
+
+**LSTM** 解决梯度爆炸和梯度消失问题：
+
+- LSTM通过门机制完美的解决了这两个问题
 
 ## 长短期记忆
 
 Long-Short Term Memory :LSTM 中引入了3个门，即输入门（input gate）、遗忘门（forget gate）和输出门（output gate），以及与隐藏状态形状相同的记忆细胞（某些文献把记忆细胞当成一种特殊的隐藏状态），从而记录额外的信息
 
+如果门的输出是0， 就表示将门紧紧关闭，为1则表示将门完全打开，而位于0-1之间的实数表示将门半开，至于开的幅度跟这个数的大小有关，门就表示变量对变量的的影响程度。
+
 ![ss](https://trickygo.github.io/Dive-into-DL-TensorFlow2.0/img/chapter06/6.8_lstm_0.svg)
+
+遗忘门
+
+![a](https://www.zhihu.com/equation?tex=f_t+%3D+%5Csigma%7B%28W_f+%5Ccdot+%5Bh_%7Bt-1%7D%2Cx_t%5D+%2B+b_f%29%7D+)
+
+![[公式]](https://www.zhihu.com/equation?tex=f_t) ： 遗忘门输出，用于控制上一时刻的单元状态 ![[公式]](https://www.zhihu.com/equation?tex=c_%7Bt-1%7D) 有多少保留到当前时刻 ![[公式]](https://www.zhihu.com/equation?tex=c_t) 。
+
+**输入门决定了当前时刻网络的输入** ![[公式]](https://www.zhihu.com/equation?tex=x_t) **有多少保存到单元状态** ![[公式]](https://www.zhihu.com/equation?tex=c_t) **。**
+
+![[公式]](https://www.zhihu.com/equation?tex=+i_t%3D%5Csigma%28W_i%5Ccdot%5Bh_%7Bt-1%7D%2Cx_t%5D%2Bb_i%29+)
+
+![[公式]](https://www.zhihu.com/equation?tex=i_t) ： 输入门的输出值，是一个0 - 1 之间的实数，决定了当前时刻网络的输入 ![[公式]](https://www.zhihu.com/equation?tex=x_t) 有多少保存到单元状态 ![[公式]](https://www.zhihu.com/equation?tex=c_t) 。
+
+输出门就是**用来控制单元状态** ![[公式]](https://www.zhihu.com/equation?tex=+c_t) **有多少输入到 LSTM 的当前输出值** ![[公式]](https://www.zhihu.com/equation?tex=h_t) **。**
+
+![[公式]](https://www.zhihu.com/equation?tex=+o_t%3D%5Csigma%28W_o%5Ccdot%5Bh_%7Bt-1%7D%2Cx_t%5D%2Bb_o%29+)
+
+LSTM的重点在于思想， 有很多paper都有介绍LSTM的变体: **普通RNN的隐层只有一个状态，如**h**，该状态对短期的输入十分敏感，这使得RNN处理短期依赖问题很拿手，那么如果我们再添加一个状态，如**c**，让它来保存长期的状态，这样，我们不就能保证对长期的输入保持一定的敏感，问题不就解决了。**
+
+
 
 **Steps of LSTM:**
 
 LSTM 的循环神经网络
 
 ![lstm](https://github.com/TrickyGo/Dive-into-DL-TensorFlow2.0/raw/master/docs/img/chapter06/6.5.png)
+
+具体到NLP领域中，通常我们会在 Embedding 层采用双向 LSTM，GRU 对文本进行扫描来获得每个词的上下文表示， 如果我们采用传统的RNN，这就意味着句子的第一个单词对句子最后一个单词不起作用了，这明显是有问题的。
+
+## GRU
+
+GRU 抛弃了 LSTM 中的 ![[公式]](https://www.zhihu.com/equation?tex=h_t) ，它认为既然 ![[公式]](https://www.zhihu.com/equation?tex=c_t) 中已经包含了 ![[公式]](https://www.zhihu.com/equation?tex=h_t) 中的信息了，那还要 ![[公式]](https://www.zhihu.com/equation?tex=h_t) 做什么，于是，它就把 ![[公式]](https://www.zhihu.com/equation?tex=h_t) 干掉了。 然后，GRU 又发现，在生成当前时刻的全局信息时，我当前的单元信息与之前的全局信息是此消彼长的关系，直接用 ![[公式]](https://www.zhihu.com/equation?tex=1-z_t) 替换 ![[公式]](https://www.zhihu.com/equation?tex=i_t) ，简单粗暴又高效 。
+
+![img](https://pic3.zhimg.com/80/v2-805c262b34d643449d42efdd8f3be49a_720w.jpg)
+
+归纳一下 LSTM 与 GRU 的区别：
+
+- 首先， LSTM 选择暴露部分信息（ ![[公式]](https://www.zhihu.com/equation?tex=h_t) 才是真正的输出， ![[公式]](https://www.zhihu.com/equation?tex=c_t) 只是作为信息载体，并不输出)， 而GRU 选择暴露全部信息。
+- 另一个区别在于输出变化所带来的结构调整。为了与LSTM的信息流保持一致，重置门本质上是输出门的一种变化，由于输出变了，因此其调整到了计算 ![[公式]](https://www.zhihu.com/equation?tex=h%27_t) 的过程中。
+
+对于 LSTM 与 GRU 而言， 由于 GRU 参数更少，收敛速度更快，因此其实际花费时间要少很多，这可以大大加速了我们的迭代过程。 而从表现上讲，二者之间孰优孰劣并没有定论，这要依据具体的任务和数据集而定，而实际上，二者之间的 performance 差距往往并不大，远没有调参所带来的效果明显，与其争论 LSTM 与 GRU 孰优孰劣， 不如在 LSTM 或 GRU的激活函数（如将tanh改为tanh变体）和权重初始化上功夫。
 
 # 强化学习
 
