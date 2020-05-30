@@ -1,70 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdfb1f0d-9cd5-42de-b95d-1cbb2059d1cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/generator/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/.ipynb_checkpoints/Gensim word vector visualization of various word vectors-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/.ipynb_checkpoints/python basic-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/.ipynb_checkpoints/word2vec-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/.ipynb_checkpoints/分词工具-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/Gensim word vector visualization of various word vectors.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/.ipynb_checkpoints/exploring_word_vectors-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/.ipynb_checkpoints/word2vec-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/exploring_word_vectors.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/imgs/inner_product.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/imgs/svd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/imgs/test_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/news.sohunews.010806.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/word2vec.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/a1/word2vec.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/cor.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/cs224n-2019-lecture01-wordvecs1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/cs224n-python-review-20.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/python basic.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/word2vec.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/分词工具.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/1 word vector/天龙八部.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/.idea/a2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/collect_submission.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/env.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/get_datasets.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/sgd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/utils/gradcheck.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/utils/treebank.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/utils/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/NN/a2/word2vec.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/paper/word-vector and glove/Efficient Estimation of Word Representations in Vector Space.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/paper/word-vector and glove/Evaluation methods for unsupervised word embeddings.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/paper/word-vector and glove/Improving Distributional Similarity with Lessons Learned from Word Embeddings.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/paper/word-vector and glove/distributed-representations-of-words-and-phrases-and-their-compositionality.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/paper/word-vector and glove/glove.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/paper/word-vector and glove/other.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nlp/NLP with CS 224N/paper/word-vector and glove/word2vec explaintation.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/.idea/love song generator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/.ipynb_checkpoints/1 文件夹处理文档-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/.ipynb_checkpoints/2 构建词向量-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/1 文件夹处理文档.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/1_doc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/2 构建词向量.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/2_word2vec.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/crawl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/1 data and process/tge.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/data/cor.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/data/segment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../love song generator/readme.md" beforeDir="false" />
-    </list>
+    <list default="true" id="fdfb1f0d-9cd5-42de-b95d-1cbb2059d1cc" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +13,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/cor.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="345">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -134,6 +71,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,10 +93,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RunDashboard">
@@ -284,7 +222,7 @@
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24358974" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19764957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -318,8 +256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/cor.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
