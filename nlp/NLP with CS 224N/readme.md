@@ -6,6 +6,14 @@ lecture：https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY4
 
 课后作业参考代码：https://blog.csdn.net/zyx_ly/article/details/100594378
 
+CS231N ： 
+
+网站主页 http://cs231n.stanford.edu/2017/syllabus
+
+
+
+
+
 ## 1 word vector
 
 1. [Word2Vec Tutorial - The Skip-Gram Model](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
