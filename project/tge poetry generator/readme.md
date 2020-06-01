@@ -1,4 +1,6 @@
-# 泰戈尔风格的文本生成模型
+# 
+
+泰戈尔风格的文本生成模型
 
 参考：tf 官方教程 https://www.tensorflow.org/tutorials/text/text_generation 莎士比亚文本风格生成其
 
