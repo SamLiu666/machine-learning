@@ -8,7 +8,7 @@ lecture：https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY4
 
 CS231N ： 
 
-网站主页 http://cs231n.stanford.edu/2017/syllabus
+网站主页 http://cs231n.stanford.edu/syllabus.html
 
 
 
