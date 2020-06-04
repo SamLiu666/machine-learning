@@ -17,7 +17,8 @@ def sigmoid(x):
     """
 
     ### YOUR CODE HERE
-    s = 1 / (1+np.exp(-x))
+    # s = 1 / (1+np.exp(-x))
+    s = 1 / (1 + np.exp(-x))
     ### END YOUR CODE
 
     return s
@@ -60,6 +61,8 @@ def naiveSoftmaxLossAndGradient(
 
     # forward
     c, o, target = centerWordVec, outsideVectors, outsideWordIdx
+    # center, outer, index  =  centerWordVec, outsideVectors, outsideWordIdx
+    # center = center.shape((center.shape[0],1))
     c = c.reshape((c.shape[0], 1))
     # assume N words, V dimentions, so
     # a.shape == (V, 1) W.shape == (N, V)
@@ -89,7 +92,7 @@ def getNegativeSamples(outsideWordIdx, dataset, K):
     negSampleWordIndices = [None] * K
     for k in range(K):
         newidx = dataset.sampleTokenIdx()
-        while newidx == outsideWordIdx:
+        while newidx == outsideWordIdx:  # 从外围样本中采取K个数据
             newidx = dataset.sampleTokenIdx()
         negSampleWordIndices[k] = newidx
     return negSampleWordIndices
@@ -118,8 +121,8 @@ def negSamplingLossAndGradient(
 
     # Negative sampling of words is done for you. Do not modify this if you
     # wish to match the autograder and receive points!
-    negSampleWordIndices = getNegativeSamples(outsideWordIdx, dataset, K)
-    indices = [outsideWordIdx] + negSampleWordIndices
+    negSampleWordIndices = getNegativeSamples(outsideWordIdx, dataset, K)  # 获取样本
+    indices = [outsideWordIdx] + negSampleWordIndices   # 总单词的索引
 
     ### YOUR CODE HERE
 
