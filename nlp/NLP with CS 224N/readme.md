@@ -73,3 +73,10 @@ Additional Readings:
 1. word2vec模型实现(numpy)，损失函数，梯度，反向传播求梯度
 2. 随机梯度下降算法实现
 3. 语料训练接口，改进尝试英文分词、中文
+
+**Assignment 4** Neural Machine Translation with RNNs
+
+目标：利用注意力机制，实现一个seq2seq的神经网络机器翻译模型，双向的LSTM编码器，和单向的LSTM解码器
+
+
+
