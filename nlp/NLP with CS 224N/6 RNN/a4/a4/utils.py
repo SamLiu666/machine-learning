@@ -29,7 +29,10 @@ def pad_sents(sents, pad_token):
     sents_padded = []
 
     ### YOUR CODE HERE (~6 Lines)
-
+    # 填充句子，是每一个句子的序列长度一致
+    sents_len = [len(sen) for sen in sents]
+    max_len = max(sents_len)
+    sents_padded = [sen + [pad_token]*(max_len-len(sen)) for sen in sents]
 
     ### END YOUR CODE
 

@@ -80,3 +80,4 @@ Additional Readings:
 
 
 
+tqdm==4.29.1
