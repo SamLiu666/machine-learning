@@ -11,6 +11,14 @@ conda list：查看安装了哪些包。
 conda install package_name(包名)：安装包
 conda env list 或 conda info -e：查看当前存在哪些虚拟环境
 conda update conda：检查更新当前conda
+
+git config --global https.proxy http://127.0.0.1:1080
+
+git config --global https.proxy https://127.0.0.1:1080
+
+git config --global --unset http.proxy
+
+git config --global --unset https.proxy
 ```
 
 
