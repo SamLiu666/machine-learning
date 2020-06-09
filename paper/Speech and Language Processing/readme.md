@@ -54,6 +54,25 @@ $P(X_1,X_2...X_N) = \Pi_{k=1}^{n}P(X_k|X_1^{k-1})$ chain rule-- Markov assumptio
 
 统计假设检验？
 
+**项目实践**
+
+
+```shell
+数据描述: 每行都是一篇演讲稿，每行的第一个单词指明了这篇演讲稿所属的党派，RED 指共和党，而 BLUE 指民主党。所有单词和符号都已经被转为大写并由空格分隔方便处理。train.txt 有共和党演讲稿和民主党演讲稿各 23 篇，test.txt 有 6 篇共和党演讲稿，12 篇民主党演讲稿。
+
+需统计：
+1. 各个单词在各个分类中出现的数量
+2. 各个分类中不重复词的数量
+
+朴素贝叶斯训练步骤：
+1. 读取训练和测试数据，去除stopwords，处理成词袋，并统计各类样本对应的词频率：此项目为例
+   - 统计类别 Blue 和 Red：词个数，词频率，不重复词的个数
+2. 训练模型--生成式判别模型，直接输入测试数据，根据最大似然估计，概率大的为对应类别如果是未出现的词，+1 进行平滑处理
+   - Blue，Red 概率比较，取值大的为判别的概率。
+3. 识别结果100%
+```
+
+
 ## 5 Logistic Regression
 
 组成部分：
@@ -73,4 +92,16 @@ The Stochastic Gradient Descent Algorithm--SGD
 
 mini-batch,, normalization-overfitting: L2-small weights, L1-big weights
 
-Multinomial logistic regression--softmax
+**Multinomial logistic regression--softmax**
+
+![image-20200609203105775](C:\Users\liu\AppData\Roaming\Typora\typora-user-images\image-20200609203105775.png)
+
+**逻辑回归-美团点评情感分类**
+
+```shell
+数据描述：xlxs文件，包含多种数据，提取评论和评级两类数据，同时将等级划分为0，1两类
+数据处理：对语料分词处理，数据集划分为训练集和测试集，没有去除stopwords
+模型训练：数据向量化，输入线性回归模型训练
+结果分析：精确率，召回率，F1-score, 混淆矩阵
+```
+
