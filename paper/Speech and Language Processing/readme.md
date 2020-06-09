@@ -56,3 +56,21 @@ $P(X_1,X_2...X_N) = \Pi_{k=1}^{n}P(X_k|X_1^{k-1})$ chain rule-- Markov assumptio
 
 ## 5 Logistic Regression
 
+组成部分：
+
+1. 特征提取
+2. 分类函数，sigmoid  softmax
+3. 损失函数：交叉熵：$\hat y$ 和 $y$ 区别多少。 取值概率最大，损失函数取反（值最小）
+4. 优化方法：随机梯度下降
+
+Generative and Discriminative Classifiers： 朴素贝叶斯在小数据集上效果更好
+
+例子：sentiment classification（情感分类）
+
+参数：条件损失函数最小化，条件概率最大化--找到最好的参数：学习过程
+
+The Stochastic Gradient Descent Algorithm--SGD
+
+mini-batch,, normalization-overfitting: L2-small weights, L1-big weights
+
+Multinomial logistic regression--softmax
