@@ -1,5 +1,7 @@
 https://web.stanford.edu/~jurafsky/slp3/  inference
 
+数据集：https://zhuanlan.zhihu.com/p/145436365?utm_source=wechat_session&utm_medium=social&utm_oi=50414917517312
+
 ## 2.1 Regular Expressions
 
  traditional text processing
@@ -105,3 +107,25 @@ mini-batch,, normalization-overfitting: L2-small weights, L1-big weights
 结果分析：精确率，召回率，F1-score, 混淆矩阵
 ```
 
+## 6 Vector Semantics and Embeddings
+
+词向量的语义，更符合上下文的表示
+
+- 词根和语境，同义词，相似词，关联词，语义结构和角色，暗示
+
+词和向量：基于共现矩阵（词一起出现）
+
+相似度：点积，余弦相似度
+
+![image-20200610100025145](C:\Users\liu\AppData\Roaming\Typora\typora-user-images\image-20200610100025145.png)
+
+共现矩阵：过于稀疏，直觉：如何更有效的表示词向量：
+
+1. TF-IDF： TF-词频，IDF逆文档频率，实质是共现矩阵的加权，同样会有稀疏问题
+   - $tf_{t,d}=lg(count(t,d)+1)$
+   - $idf_t=lg(\frac{N}{df_t})$
+   - $w_{t,d} = tf_{t,d}\times idf_t$
+
+PMI 点相互信息：x y 出现的频率
+
+Analogy： 推论

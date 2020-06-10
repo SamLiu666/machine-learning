@@ -1,5 +1,7 @@
 # NLP
 
+[常见面试题汇总](https://blog.csdn.net/qq_17677907/article/details/86448214)
+
 [nlp迁移学习](https://www.toutiao.com/i6637321233358668292/)  [BERT 的发展和展望](https://mp.weixin.qq.com/s/U_pYc5roODcs_VENDoTbiQ)
 
 source： https://github.com/NLP-LOVE/ML-NLP
