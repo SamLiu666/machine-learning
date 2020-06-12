@@ -96,7 +96,11 @@ mini-batch,, normalization-overfitting: L2-small weights, L1-big weights
 
 **Multinomial logistic regression--softmax**
 
-![image-20200609203105775](C:\Users\liu\AppData\Roaming\Typora\typora-user-images\image-20200609203105775.png)
+
+
+![2](https://github.com/SamLiu666/machine-learning/blob/master/paper/Speech%20and%20Language%20Processing/pic/2.png)
+
+
 
 **逻辑回归-美团点评情感分类**
 
@@ -117,8 +121,6 @@ mini-batch,, normalization-overfitting: L2-small weights, L1-big weights
 
 相似度：点积，余弦相似度
 
-![image-20200610100025145](C:\Users\liu\AppData\Roaming\Typora\typora-user-images\image-20200610100025145.png)
-
 共现矩阵：过于稀疏，直觉：如何更有效的表示词向量：
 
 1. TF-IDF： TF-词频，IDF逆文档频率，实质是共现矩阵的加权，同样会有稀疏问题
@@ -129,3 +131,27 @@ mini-batch,, normalization-overfitting: L2-small weights, L1-big weights
 PMI 点相互信息：x y 出现的频率
 
 Analogy： 推论
+
+## 7 NNLM
+
+units+activation funciton
+
+计算图、反向传播、dropout，mini-batch
+
+Feedforward NN - times, like LM， |V| 个词
+
+embedding(1*n_d) ->W(n_d * d_h ) = hidden (1 * d_h)-> W2( |V|  * d_h) -> output (1 * |V|)
+
+embedding： 对所有词的向量嵌入，因此是 d*|V|  （d for each word d dimention）
+
+![3](https://github.com/SamLiu666/machine-learning/blob/master/paper/Speech%20and%20Language%20Processing/pic/3.jpg](https://github.com/SamLiu666/machine-learning/blob/master/paper/Speech and Language Processing/pic/3.jpg))
+
+## 8 Part-of-Speech Tagging
+
+词性标注：named entities and information extraction，包含两种算法：
+
+- generative -- Hidden Markov Model (HMM)- sequence model
+- discriminative—the Maximum Entropy Markov Model (MEMM)
+- recurrent neural network (RNN).
+
+三者各有应用场景，The Penn Treebank Part-of-Speech Tagset，目的是消歧
