@@ -2,6 +2,14 @@ https://web.stanford.edu/~jurafsky/slp3/  inference
 
 数据集：https://zhuanlan.zhihu.com/p/145436365?utm_source=wechat_session&utm_medium=social&utm_oi=50414917517312
 
+## 总结
+
+这一部分的内容从第二章到第八章，包括正则表达式（分词，词形还原等等），语言模型（N-gram、贝叶斯），这些模型的使用都是需要对文本先进行处理--向量化（word embedding, TF-IDF）,引出语义相似度--余弦。在原本传统的处理基础上，对比提出了基于神经网络的语言模型--NNLM（逻辑回归），输入--向量化（embedding） 经过权重计算，得到隐层值，再经过权重和激活函数（relu, tanh,sigmoid..）得到输出层。通过损失函数(交叉熵，均值等)，反向传播算法（adma, sgd, momentum, adgrad等等），优化参数，得到训练好的模型，进行测试分类，测试句子。
+
+其中的语义消歧、多义词、不知道的词--词性标注的解决方法，提高模型性能
+
+词性标注已经涉及到了序列到序列的方面，接下来的内容是序列的神经网络处理，也是NLP方向的重大突破
+
 ## 2.1 Regular Expressions
 
  traditional text processing
@@ -155,3 +163,16 @@ embedding： 对所有词的向量嵌入，因此是 d*|V|  （d for each word d
 - recurrent neural network (RNN).
 
 三者各有应用场景，The Penn Treebank Part-of-Speech Tagset，目的是消歧
+
+HMM：基于现在状态对未来状态的预测，
+
+- Markov Assumption: $P(q_i=a|q_1...q_{i-1})=P(q_i=a|q_{i-1})$ 
+
+HMM as decoding: The decoding algorithm for HMMs is the Viterbi algorithm (维比特算法)； beam searcha
+
+deal with unknow words:
+
+MEMM：直接计算 $\hat T = argmax_T P(T|W)$
+
+以上的模型都是从左往右的，考虑文字双向的情况，可以使用conditional random field or CRF （条件随机场）
+
