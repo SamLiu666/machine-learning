@@ -2,13 +2,9 @@ https://web.stanford.edu/~jurafsky/slp3/  inference
 
 数据集：https://zhuanlan.zhihu.com/p/145436365?utm_source=wechat_session&utm_medium=social&utm_oi=50414917517312
 
-## 总结
+书籍：https://web.stanford.edu/~jurafsky/slp3/
 
-这一部分的内容从第二章到第八章，包括正则表达式（分词，词形还原等等），语言模型（N-gram、贝叶斯），这些模型的使用都是需要对文本先进行处理--向量化（word embedding, TF-IDF）,引出语义相似度--余弦。在原本传统的处理基础上，对比提出了基于神经网络的语言模型--NNLM（逻辑回归），输入--向量化（embedding） 经过权重计算，得到隐层值，再经过权重和激活函数（relu, tanh,sigmoid..）得到输出层。通过损失函数(交叉熵，均值等)，反向传播算法（adma, sgd, momentum, adgrad等等），优化参数，得到训练好的模型，进行测试分类，测试句子。
 
-其中的语义消歧、多义词、不知道的词--词性标注的解决方法，提高模型性能
-
-词性标注已经涉及到了序列到序列的方面，接下来的内容是序列的神经网络处理，也是NLP方向的重大突破
 
 ## 2.1 Regular Expressions
 
@@ -156,6 +152,8 @@ embedding： 对所有词的向量嵌入，因此是 d*|V|  （d for each word d
 
 ## 8 Part-of-Speech Tagging
 
+[HMM参考](https://www.cnblogs.com/mantch/p/11203748.html)
+
 词性标注：named entities and information extraction，包含两种算法：
 
 - generative -- Hidden Markov Model (HMM)- sequence model
@@ -176,3 +174,46 @@ MEMM：直接计算 $\hat T = argmax_T P(T|W)$
 
 以上的模型都是从左往右的，考虑文字双向的情况，可以使用conditional random field or CRF （条件随机场）
 
+## 总结 2--8
+
+这一部分的内容从第二章到第八章，包括正则表达式（分词，词形还原等等），语言模型（N-gram、贝叶斯），这些模型的使用都是需要对文本先进行处理--向量化（word embedding, TF-IDF）,引出语义相似度--余弦。在原本传统的处理基础上，对比提出了基于神经网络的语言模型--NNLM（逻辑回归），输入--向量化（embedding） 经过权重计算，得到隐层值，再经过权重和激活函数（relu, tanh,sigmoid..）得到输出层。通过损失函数(交叉熵，均值等)，反向传播算法（adma, sgd, momentum, adgrad等等），优化参数，得到训练好的模型，进行测试分类，测试句子。
+
+其中的语义消歧、多义词、不知道的词--词性标注的解决方法，提高模型性能
+
+词性标注已经涉及到了序列到序列的方面，接下来的内容是序列的神经网络处理，也是NLP方向的重大突破
+
+**传统的LM 基于马尔可夫假设的N-gram和NNLM(滑动窗口)，是否可以此分类？**
+
+## 9 Seq with RNN
+
+数学公式推导：反向误差传播更新权重
+
+unrolled networks VS computation graph
+
+1. 将展开的RNN网络应用到计算图网络长，逐词逐句的处理
+2. 长句子序列，分成几个部分，作为一个分离的训练集
+
+RNN 应用：RNNLM：交叉熵损失函数
+
+1. autoregressive generation： 困惑度 评价模型生成文字的效果
+2. Sequence Labeling： 词性标注问题， named entity recognition （IOB 编码）， structure prediction（语义树）
+3. Viterbi and Conditional Random Fields (CRFs)
+4. RNNs for Sequence Classification：序列太长，前面的词对最终分类结果影响小
+
+### Deep Networks: Stacked and Bidirectional RNNs
+
+**1 Stacked RNNs** ： 一个RNN的输出作为另一个RNN的输入，堆叠RNN网络：发现更多的特征表示，类似CV中的多层CNN，训练成本会上升
+
+**2 Bidirectional RNNs** ：双向RNN，两个独立的RNN网络，组合输出表示上下文
+
+### Managing Context in RNNs: LSTMs and GRUs
+
+应对RNN对长序列中前面单词处理不够的问题
+
+**1 Long short-term memory (LSTM) networks**：使用三个门”记忆“信息, forget , add, output  
+
+**2 Gated Recurrent Units**：简化版 gate，reset  ,update
+
+面临的困境： 词典巨大，也会遇到unkbow word
+
+Character-Level Word Embedding:
