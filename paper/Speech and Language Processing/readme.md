@@ -148,7 +148,11 @@ embedding(1*n_d) ->W(n_d * d_h ) = hidden (1 * d_h)-> W2( |V|  * d_h) -> output 
 
 embedding： 对所有词的向量嵌入，因此是 d*|V|  （d for each word d dimention）
 
-![3](https://github.com/SamLiu666/machine-learning/blob/master/paper/Speech%20and%20Language%20Processing/pic/3.jpg](https://github.com/SamLiu666/machine-learning/blob/master/paper/Speech and Language Processing/pic/3.jpg))
+![3](https://github.com/SamLiu666/machine-learning/blob/master/paper/Speech%20and%20Language%20Processing/pic/3.jpg)
+
+
+
+
 
 ## 8 Part-of-Speech Tagging
 
@@ -217,3 +221,13 @@ RNN 应用：RNNLM：交叉熵损失函数
 面临的困境： 词典巨大，也会遇到unkbow word
 
 Character-Level Word Embedding:
+
+## 10 Encoder-Decoder Models, Attention, and Contextual Embeddings
+
+encoder-decoder or sequence-to-sequence models.
+
+Attention
+
+application: summarization, sentence simplification, question answering and image captioning 
+
+Self-Attention and Transformer Networks

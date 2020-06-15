@@ -26,7 +26,9 @@ nlp常见项目参考:https://github.com/watermelon-lee/NLP-practice-with-Tensor
 
 NLP 学习资源论文和课程：https://github.com/andrewt3000/DL4NLP
 
-NLP教程tensorflow 和 pytorch: https://github.com/graykode/nlp-tutorial -- 强推，代码学习和实现
+NLP教程tensorflow 和 pytorch: https://github.com/graykode/nlp-tutorial -- 强推，论文，代码学习和实现
+
+pytorch NLP 教程：https://pytorch.apachecn.org/docs/1.0/
 
 # 项目
 
