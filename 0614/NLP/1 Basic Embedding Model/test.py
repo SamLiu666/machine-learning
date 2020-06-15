@@ -1,6 +1,8 @@
 # code by Tae Hwan Jung @graykode
 import tensorflow as tf
 import numpy as np
+from tensorflow.python.framework import ops
+ops.reset_default_graph()
 
 tf.reset_default_graph()
 
