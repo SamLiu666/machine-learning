@@ -12,6 +12,13 @@ NLP项目：https://github.com/lyeoni/nlp-tutorial
 
 中文数据集：https://github.com/InsaneLife/ChineseNLPCorpus
 
+# 实现 过程
+
+1. 导入库
+2. 创建总词集合，词-数字字典，数字-词字典，构建输入批次
+3. 基于框架创建模型
+4. 训练模型，测试结果
+
 # 分词
 
 THULAC： https://github.com/thunlp/THULAC ：包括中文分词、词性标注功能。
