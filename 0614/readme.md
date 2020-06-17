@@ -21,7 +21,7 @@ NLP项目：https://github.com/lyeoni/nlp-tutorial
 
 # 分词
 
-THULAC： https://github.com/thunlp/THULAC ：包括中文分词、词性标注功能。
+THULAC：https://github.com/thunlp/THULAC-Python：包括中文分词、词性标注功能。
 
 HanLP：https://github.com/hankcs/HanLP
 
@@ -29,4 +29,4 @@ HanLP：https://github.com/hankcs/HanLP
 
 NLPIR https://github.com/NLPIR-team/NLPIR
 
-jieba https://github.com/yanyiwu/cppjieba
+jieba https://github.com/fxsjy/jieba
