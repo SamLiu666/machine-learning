@@ -8,6 +8,10 @@ NLP 扩展阅读:https://github.com/liuyaox/roadmap_nlp
 
 NLP项目：https://github.com/lyeoni/nlp-tutorial
 
+pytorch 视频课：https://www.youtube.com/watch?v=GIsg-ZUy0MY&t=221s
+
+coursera DNN视频课：https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning#syllabus  Sequence Part
+
 算法：本地algorithm
 
 中文数据集：https://github.com/InsaneLife/ChineseNLPCorpus
