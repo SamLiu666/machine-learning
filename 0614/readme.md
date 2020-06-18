@@ -8,9 +8,11 @@ NLP 扩展阅读:https://github.com/liuyaox/roadmap_nlp
 
 NLP项目：https://github.com/lyeoni/nlp-tutorial
 
-pytorch 视频课：https://www.youtube.com/watch?v=GIsg-ZUy0MY&t=221s
+视频课：
 
-coursera DNN视频课：https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning#syllabus  Sequence Part
+- pytorch 视频课：https://www.youtube.com/watch?v=GIsg-ZUy0MY&t=221s
+- coursera DNN视频课： [Sequence Part](https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning#syllabus ) 和 [参考代码](https://github.com/dangnam739/deep-learning-coursera)
+- FastAI NLP:[lecture](https://www.youtube.com/watch?v=cce8ntxP_XI&list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9&index=2&t=0s) and [notebook](https://github.com/fastai/course-nlp)
 
 算法：本地algorithm
 
