@@ -12,8 +12,8 @@ NLP项目：https://github.com/lyeoni/nlp-tutorial
 
 - pytorch 视频课：https://www.youtube.com/watch?v=GIsg-ZUy0MY&t=221s
 - FastAI NLP:[lecture](https://www.youtube.com/watch?v=cce8ntxP_XI&list=PLtmWHNX-gukKocXQOkQjuVxglSDYWsSh9&index=2&t=0s) and [notebook](https://github.com/fastai/course-nlp)
-- coursera DNN视频课： [Sequence Part](https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning#syllabus ) 和 [参考代码](https://github.com/dangnam739/deep-learning-coursera)  https://github.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai
-- coursera ML: [课程](https://www.coursera.org/learn/machine-learning/home/welcome)  [代码笔记参考](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
+- coursera DNN视频课： [Sequence Part](https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning#syllabus ) 和 [参考代码](https://github.com/dangnam739/deep-learning-coursera) [在线笔记](https://github.com/AlbertHG/Coursera-Deep-Learning-deeplearning.ai)
+- coursera ML: [课程](https://www.coursera.org/learn/machine-learning/home/welcome)  [代码笔记参考](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)  [中文笔记](http://www.ai-start.com/ml2014/)   -- done
 
 算法：本地algorithm
 
