@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Load Packages
 from __future__ import print_function
 from keras.callbacks import LambdaCallback
@@ -10,6 +11,7 @@ import numpy as np
 import random
 import sys
 import io
+
 
 def build_data(text, Tx = 40, stride = 3):
     """
@@ -28,7 +30,7 @@ def build_data(text, Tx = 40, stride = 3):
     X = []
     Y = []
 
-    ### START CODE HERE ### (â‰ˆ 3 lines)
+    ### START CODE HERE ### (¡Ö 3 lines)
     for i in range(0, len(text) - Tx, stride):
         X.append(text[i: i + Tx])
         Y.append(text[i + Tx])
@@ -93,14 +95,18 @@ def on_epoch_end(epoch, logs):
     #for i in range(400):
 """
         #x_pred = np.zeros((1, Tx, len(chars)))
+
         for t, char in enumerate(sentence):
             if char != '0':
                 x_pred[0, t, char_indices[char]] = 1.
+
         preds = model.predict(x_pred, verbose=0)[0]
         next_index = sample(preds, temperature = 1.0)
         next_char = indices_char[next_index]
+
         generated += next_char
         sentence = sentence[1:] + next_char
+
         sys.stdout.write(next_char)
         sys.stdout.flush()
         
