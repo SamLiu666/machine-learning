@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d010de7-c5cc-4913-8ef7-c35bba9d9e69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/1_numpy_basic.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/2_Logistic Regression with a Neural Network mindset.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/.ipynb_checkpoints/3_Planar_data_classification_with_onehidden_layer_v6c-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/.ipynb_checkpoints/Planar_data_classification_with_onehidden_layer_v6c-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/.ipynb_checkpoints/Test-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/.ipynb_checkpoints/answer-Planar data classification with one hidden layer-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/3_Planar_data_classification_with_onehidden_layer_v6c.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/Planar_data_classification_with_onehidden_layer_v6c.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/answer-Planar data classification with one hidden layer.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/planar_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 3/testCases.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/.ipynb_checkpoints/Building_your_Deep_Neural_Network_Step_by_Step_v8a-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/.ipynb_checkpoints/Deep Neural Network for Image ClassificationApplication-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/Building_your_Deep_Neural_Network_Step_by_Step_v8a.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/Deep Neural Network for Image ClassificationApplication.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/test_catvnoncat.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/datasets/train_catvnoncat.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/dnn_app_utils_v2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/dnn_utils_v2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Neural Networks and Deep Learning/week 4/tetCases_v4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../utils.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reg_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="335" column="25" selection-start-line="335" selection-start-column="25" selection-end-line="335" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gc_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="851">
+              <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>forward_propagation_with_dropout</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/reg_utils.py" />
+        <option value="$PROJECT_DIR$/gc_utils.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/week 1.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="2108" />
+    <option name="y" value="18" />
+    <option name="width" value="1114" />
+    <option name="height" value="1046" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="week 1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="week 1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="copyright" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d010de7-c5cc-4913-8ef7-c35bba9d9e69" name="Default Changelist" comment="" />
+      <created>1592969768313</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592969768313</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1456" height="876" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16361073" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Regularization_v2a.ipynb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reg_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="335" column="25" selection-start-line="335" selection-start-column="25" selection-end-line="335" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gc_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
