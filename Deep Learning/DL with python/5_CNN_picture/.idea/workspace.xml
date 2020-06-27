@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="67e959a4-52b5-43d4-98ee-82bee4710e17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cnn_pretrained.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vilualizing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/.idea/practical machine learning with python.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/.ipynb_checkpoints/2.1-a-first-look-at-a-neural-network-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/.ipynb_checkpoints/3.5-classifying-movie-reviews-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/2_3_4_regression_classification_fitting/2.1-a-first-look-at-a-neural-network.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/2_3_4_regression_classification_fitting/3.5-classifying-movie-reviews.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/2_3_4_regression_classification_fitting/3_classify_newswires.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/2_3_4_regression_classification_fitting/overfitting_underfitting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/2_3_4_regression_classification_fitting/predicting_house_price.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/cats_and_dogs_small_1.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/cats_and_dogs_small_2.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/cnn_introduction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/data augmentation_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/data augmentation_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/data augmentation_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/data augmentation_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/no_overfitting_after_da_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/no_overfitting_after_da_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/origin_acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/data_record/origin_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/5_CNN_picture/small_data_cnn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practical machine learning with python/readme.md" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vilualizing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pretrained_cnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="52" />
+              <folding>
+                <element signature="e#31#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pretrained_cnn].py" />
+        <option value="$PROJECT_DIR$/cnn_pretrained.py" />
+        <option value="$PROJECT_DIR$/pretrained_cnn.py" />
+        <option value="$PROJECT_DIR$/vilualizing.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/5_CNN_picture.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="5_CNN_picture" type="b2602c69:ProjectViewProjectNode" />
+              <item name="5_CNN_picture" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="copyright" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67e959a4-52b5-43d4-98ee-82bee4710e17" name="Default Changelist" comment="" />
+      <created>1593218176428</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593218176428</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1741453" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pretrained_cnn].py" />
+    <entry file="file://$PROJECT_DIR$/cnn_pretrained.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pretrained_cnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="52" />
+          <folding>
+            <element signature="e#31#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vilualizing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

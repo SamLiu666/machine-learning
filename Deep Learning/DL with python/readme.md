@@ -11,5 +11,12 @@ K.clear_session()
 history_dict = original_hist.history
 print(history_dict.keys())
 # dict_keys(['val_loss', 'val_acc', 'loss', 'acc'])
+
+# 查看，指定使用GPU
+from tensorflow.python.client import device_lib
+device_lib.list_local_devices()
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '/device:GPU:0'
+
 ```
 
