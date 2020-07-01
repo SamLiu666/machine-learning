@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbae4162-420f-4a7a-9cd3-14d5f74669e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../6_NLP/advanced_rnn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6_NLP/introduction_rnn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6_NLP/one_hot_encode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6_NLP/sequence_processing_cnn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6_NLP/word_embeddings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deep_dream.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nn_tranfer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../0614/coursera_dl_class/DL/1 Neural Networks and Deep Learning/week 4/datasets/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../0614/coursera_dl_class/DL/1 Neural Networks and Deep Learning/week 4/datasets/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5_CNN_picture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../5_CNN_picture/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gans_intro.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generating_imges_vaes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nn_tranfer.py" beforeDir="false" afterPath="$PROJECT_DIR$/nn_tranfer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,36 +16,36 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/text_generator.py">
+        <entry file="file://$PROJECT_DIR$/nn_tranfer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+            <state relative-caret-position="-2997">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deep_dream.py">
+        <entry file="file://$PROJECT_DIR$/generating_imges_vaes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="3002">
+              <caret line="135" column="10" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
               <folding>
-                <marker date="1593352516208" expanded="true" signature="674:726" ph="..." />
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nn_tranfer.py">
+        <entry file="file://$PROJECT_DIR$/gans_intro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
+            <state relative-caret-position="1179">
+              <caret line="145" column="22" lean-forward="true" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
               <folding>
-                <element signature="e#0#60#0" expanded="true" />
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,23 +69,16 @@
         <option value="$PROJECT_DIR$/text_generator.py" />
         <option value="$PROJECT_DIR$/deep_dream.py" />
         <option value="$PROJECT_DIR$/nn_tranfer.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/8_generation.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/generating_imges_vaes.py" />
+        <option value="$PROJECT_DIR$/gans_intro.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="899" />
-    <option name="width" value="1023" />
-    <option name="height" value="1047" />
+    <option name="x" value="952" />
+    <option name="y" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -100,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,10 +98,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RunDashboard">
@@ -143,9 +130,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="899" y="0" width="1023" height="1047" extended-state="0" />
+    <frame x="952" y="-8" width="976" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2213198" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23240939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -167,7 +155,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/text_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
+        <state relative-caret-position="815">
           <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -187,10 +175,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nn_tranfer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
+        <state relative-caret-position="-2997">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generating_imges_vaes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3002">
+          <caret line="135" column="10" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gans_intro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1179">
+          <caret line="145" column="22" lean-forward="true" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>

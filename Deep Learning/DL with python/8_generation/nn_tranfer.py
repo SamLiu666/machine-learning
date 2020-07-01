@@ -9,7 +9,8 @@ K.clear_session()  # Some memory clean-up
 # This is the path to the image you want to transform.
 target_image_path = r'E:\chrome download\paper\city.jpg'
 # This is the path to the style image.
-style_reference_image_path = r'E:\chrome download\paper\stars.jpg'
+#style_reference_image_path = r'E:\chrome download\paper\stars.jpg'
+style_reference_image_path = r"E:\chrome download\paper\bijiasuo.jpg"
 
 # Dimensions of the generated picture.
 width, height = load_img(target_image_path).size
