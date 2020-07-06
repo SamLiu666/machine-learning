@@ -8,6 +8,12 @@ source： https://github.com/NLP-LOVE/ML-NLP
 
 [论文学习资源](https://zhuanlan.zhihu.com/p/69358248)
 
+## 学习课程资源总结：
+
+[牛津大学NLP](https://github.com/oxford-cs-deepnlp-2017/lectures)
+
+[FastAi NLP](https://github.com/fastai/course-nlp) --- [配套视频课](https://www.fast.ai/2019/07/08/fastai-nlp/)
+
 # 词嵌入
 
 word embedding： 自然语言是表达意义的系统，词是基本单元，词映射到实数向量的技术即为词嵌入。文本数据表示分为，离散表示和分布式表示
