@@ -108,11 +108,13 @@ valid_writer= tf.summary.FileWriter("./logs/val")
 print("############################ 4.4  Execution and Evaluation Phase")
 batch_size = 32
 history = []
-num_epoch = 100
+num_epoch = 120
 iter_per_epoch= math.ceil(float(train_size)/batch_size)  #number of iterations per epoch
 
 with tf.Session() as sess:
     init = tf.global_variables_initializer()
+    # Add ops to save and restore all the variables.
+    saver = tf.train.Saver()
     sess.run(init)
     for epoch in range(num_epoch):
         for idx_start in range(0, X_train.shape[0], batch_size):
@@ -138,6 +140,17 @@ with tf.Session() as sess:
     print("---------------------------------------------\n")
     test_accuracy = sess.run(accuracy, feed_dict={X: X_test, y: y_test})
     print("Test accuracy: {:.4f}".format(test_accuracy))
+
+    print("---------------------------------------------\n")
+    print("Save Model")
+    if not os.path.exists(os.path.abspath("./models/tmp")):
+        os.makedirs(os.path.abspath("./models/tmp"))
+
+    # Save the variables to disk.
+    save_path = saver.save(sess, "./models/tmp/model.ckpt")
+
+    # saver.save(sess, './checkpoint_dir/MyModel')
+    print("Model saved in path: %s" % save_path)
 
 
 print("############################ 5  Visualization")
@@ -166,3 +179,50 @@ def plot_history(history):
     plt.show()
 
 plot_history(history)
+
+print("############################ 6  Resotre Model not done")
+# meta_path = r'./save_models/lstm-attention.ckpt.meta'
+# ckpt_path = './save_models/lstm-attention.ckpt'
+meta_path = r'D:\machine learning\DM_class\DL\week 2\models\tmp\model.ckpt.meta'
+ckpt_path = r"D:\machine learning\DM_class\DL\week 2\models\tmp\model.ckpt"
+# tf.reset_default_graph()
+#
+# with tf.Session() as sess:
+#     # 1. 加载graph
+#     saver=tf.train.import_meta_graph(meta_path)
+#     saver.restore(sess, ckpt_path)
+#     graph = tf.get_default_graph()
+#
+#     # 2. graph.get_operation_by_name获取需要feed的placeholder
+#     # 注意: 这些tensor的名字需要跟模型创建的时候对应
+#     # x = graph.get_operation_by_name('inputX').outputs[0]
+#     # y = graph.get_operation_by_name('inputY').outputs[0]
+#     # dropout1 = graph.get_operation_by_name('dropoutKeepProb').outputs[0]
+#     # dropout2 = graph.get_operation_by_name('denseKeepProb').outputs[0]
+#     feed_dict = {X: X_test, y: y_test}
+#
+#     # 3. tf.get_collection获取预测结果
+#     # 注意: 在训练代码中，需要计算的tensor要先用tf.add_to_collection
+#     tf.add_to_collection('network', logits)
+#     p = tf.get_collection('network')[0]
+#
+#     # 4. sess.run获得模型的预测输出
+#     prediction = sess.run([p], feed_dict=feed_dict)
+#     print(prediction[:20])
+
+# Later, launch the model, use the saver to restore variables from disk, and
+# do some work with the model.
+# with tf.Session() as sess:
+#     # Restore variables from disk.
+#     # saver = tf.train.import_meta_graph('./checkpoint_dir/MyModel.meta')
+#     saver = tf.train.import_meta_graph(r"D:\machine learning\DM_class\DL\week 2\models\tmp\model.ckpt.meta")
+#     saver.restore(sess, "./models/tmp/model.ckpt")
+#     print("Model restored.")
+#
+#     # present the parameters
+#     tvs = [v for v in tf.trainable_variables()]
+#     print("All the paramters: ")
+#     for v in tvs:
+#         print(v.name)
+#     pred = sess.run(output, feed_dict={X_test: res_image})
+#     print(np.argmax(pred, 1))
