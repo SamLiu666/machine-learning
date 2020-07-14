@@ -35,3 +35,7 @@
 https://tech.sina.cn/2020-03-16/detail-iimxyqwa0896689.d.html?from=wap  新浪知识图谱前沿内容
 
 https://programmerbackpack.com/python-nlp-tutorial-information-extraction-and-knowledge-graphs/  python建立知识图谱
+
+## 代码实现
+
+[KG-spacy-plot](https://www.analyticsvidhya.com/blog/2019/10/how-to-build-knowledge-graph-text-using-spacy/)
