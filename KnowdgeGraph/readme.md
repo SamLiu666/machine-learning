@@ -29,3 +29,9 @@
 资源：
 
 [谷粉学术](https://gfsoso.99lb.net/scholar.html)
+
+**资源参考**
+
+https://tech.sina.cn/2020-03-16/detail-iimxyqwa0896689.d.html?from=wap  新浪知识图谱前沿内容
+
+https://programmerbackpack.com/python-nlp-tutorial-information-extraction-and-knowledge-graphs/  python建立知识图谱
