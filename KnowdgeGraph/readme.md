@@ -20,6 +20,8 @@
 
 ## 待看资源：
 
+[漆桂林 知识图谱入门](https://zhuanlan.zhihu.com/p/65457826)
+
 [KG 论文资源](https://github.com/wds-seu/Knowledge-Graph-Publications)
 
 [学习知识图谱要关注的：社区、公众号、网站（整理](https://blog.csdn.net/qq_36097334/article/details/84671697)
