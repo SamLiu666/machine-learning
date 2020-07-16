@@ -16,8 +16,7 @@ class AllDiffProp(Propagator):
         super().__init__(self)
         self.args = args
         # Make sure 'wakeup' will be called whenever x is fixed.
-        for arg in self.args:
-            arg.attach_on(True, self.wakeup)
+
             
     def wakeup(self, solver):
         self.queue(solver)
