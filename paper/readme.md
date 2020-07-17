@@ -4,7 +4,11 @@
 
 [Machine learning basics](https://github.com/zotroneneis/machine_learning_basics)
 
-
+Multiple passes to read papers :
+1. Title/abstract/figures subtitles
+2. Intro+conclusion+figures+skim the rest
+3. Read but skip the math+skip the relative works
+4. Whole thing but what doesn’t make sense
 
 # 机器学习
 
