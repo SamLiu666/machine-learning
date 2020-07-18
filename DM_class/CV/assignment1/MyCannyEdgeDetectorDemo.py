@@ -73,6 +73,7 @@ def comput_Non_maximum_suppression(gradient, theta):
                 pass
     return Z
 
+
 # 4.1 Define two thresholds: low and high
 def threshold(image, lowThresholdRatio=0.01, highThresholdRatio=0.1):
     # define the highThreshold and  lowThreshold
@@ -89,6 +90,7 @@ def threshold(image, lowThresholdRatio=0.01, highThresholdRatio=0.1):
     re_image[weak_i, weak_j] = Low_Threshold
 
     return (re_image, Low_Threshold, High_Threshold)
+
 
 # 4.2 complete the hysteresis
 def  myCannyEdgeDetector(image, Low_Threshold, High_Threshold):
@@ -108,6 +110,7 @@ def  myCannyEdgeDetector(image, Low_Threshold, High_Threshold):
                     pass
     return image
 
+
 def plot_show_two_pic(one, two, title1=None, title2=None):
     # plot two images for convience
     fig, axes = plt.subplots(1, ncols=2, figsize=(15, 8))
@@ -118,48 +121,49 @@ def plot_show_two_pic(one, two, title1=None, title2=None):
     plt.show()
 
 
-######################################################################
-# read picture
-image_file_path = r'picture\task1.jpg'
-inputImg_0 = io.imread(image_file_path)  # ndarray
-inputImg = rgb2gray(inputImg_0)  # turn into gray picture
+if __name__ == '__main__':
 
-##################################################################
-#
-print("(i) output of skimage.feature.canny for the input image")
-print("--------------------------------------------\n")
-part1 = "i) skimage.feature.canny sigma=1 of input image"
-part2 = "i) skimage.feature.canny sigma=3 of input image"
-feature_canny_1 = feature.canny(inputImg, sigma=1)
-feature_canny_2 = feature.canny(inputImg, sigma=3) # different sigma value
-plot_show_two_pic(feature_canny_1, feature_canny_2, title1=part1, title2=part2)
+    ######################################################################
+    # read picture
+    image_file_path = r'image\task1.jpg'
+    inputImg_0 = io.imread(image_file_path)  # ndarray
+    inputImg = rgb2gray(inputImg_0)  # turn into gray picture
 
-
-##################################################################
-# (ii) edge output of myCannyEdgeDetector();
-print("--------------------------------------------\n")
-print("(ii) edge output of myCannyEdgeDetector()")
-img_gaussian = gaussian(k=5, sigma=1)     # 1. Gaussian  with kenel=5x5
-img_smoothed = convolve(inputImg, img_gaussian)  #  Gaussian smooth
-gradient, theta = sobel_filters(img_smoothed)  # 2. Compute magnitude and orientation of gradient
-suppression_img = comput_Non_maximum_suppression(gradient, theta)  # 3. Compute Non-maximum suppression:
-threshold_img, low_threshold, high_threshold = threshold(suppression_img)   # 4.1 Define two thresholds: low and high
-final_img = myCannyEdgeDetector(threshold_img, Low_Threshold=low_threshold, High_Threshold=high_threshold)
-# print(type(final_img), final_img)
-print("--------------------------------------------\n")
-print(low_threshold, high_threshold)
-t1 = "Original color Image"
-t2 = "edge output of myCannyEdgeDetector()"
-plot_show_two_pic(inputImg_0, final_img, title1=t1, title2=t2)
+    ##################################################################
+    #
+    print("(i) output of skimage.feature.canny for the input image")
+    print("--------------------------------------------\n")
+    part1 = "i) skimage.feature.canny sigma=1 of input image"
+    part2 = "i) skimage.feature.canny sigma=3 of input image"
+    feature_canny_1 = feature.canny(inputImg, sigma=1)
+    feature_canny_2 = feature.canny(inputImg, sigma=3) # different sigma value
+    plot_show_two_pic(feature_canny_1, feature_canny_2, title1=part1, title2=part2)
 
 
-##################################################################
-# (iii) Compute the peak signal to noise ratio
-print("--------------------------------------------\n")
-print("(iii) Compute the peak signal to noise ratio")
-# Compute the peak signal to noise ratio (PSNR) for an image.
-skimage_psnr = skimage.measure.compare_psnr(feature_canny_1, final_img)
-my_psnr = skimage.measure.compare_psnr(final_img, feature_canny_1)
-str1 = "PSNR: skimages canny edge detector/my canny edge detector"
-str2 = "PSNR: my canny edge detector/skimage  canny edge detector"
-print(str1, str(skimage_psnr), "\n", str2, str(my_psnr))
+    ##################################################################
+    # (ii) edge output of myCannyEdgeDetector();
+    print("--------------------------------------------\n")
+    print("(ii) edge output of myCannyEdgeDetector()")
+    img_gaussian = gaussian(k=5, sigma=1)     # 1. Gaussian  with kenel=5x5
+    img_smoothed = convolve(inputImg, img_gaussian)  #  Gaussian smooth
+    gradient, theta = sobel_filters(img_smoothed)  # 2. Compute magnitude and orientation of gradient
+    suppression_img = comput_Non_maximum_suppression(gradient, theta)  # 3. Compute Non-maximum suppression:
+    threshold_img, low_threshold, high_threshold = threshold(suppression_img)   # 4.1 Define two thresholds: low and high
+    final_img = myCannyEdgeDetector(threshold_img, Low_Threshold=low_threshold, High_Threshold=high_threshold)
+    # print(type(final_img), final_img)
+    print("--------------------------------------------\n")
+    print(low_threshold, high_threshold)
+    t1 = "Original color Image"
+    t2 = "edge output of myCannyEdgeDetector()"
+    plot_show_two_pic(inputImg_0, final_img, title1=t1, title2=t2)
+
+    ##################################################################
+    # (iii) Compute the peak signal to noise ratio
+    print("--------------------------------------------\n")
+    print("(iii) Compute the peak signal to noise ratio")
+    # Compute the peak signal to noise ratio (PSNR) for an image.
+    skimage_psnr = skimage.measure.compare_psnr(feature_canny_1, final_img)
+    my_psnr = skimage.measure.compare_psnr(final_img, feature_canny_1)
+    str1 = " PSNR: skimages canny edge detector/my canny edge detector"
+    str2 = "PSNR: my canny edge detector/skimage  canny edge detector"
+    print(str1, str(skimage_psnr), "\n", str2, str(my_psnr))
