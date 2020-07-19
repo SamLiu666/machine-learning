@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fb41ce4-def4-48c8-915b-8e77b38886b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/week 3/a_fundaments_cnn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/a_fundaments_cnn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/1_implement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/2_CNN_MiniVGG.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/3_reload_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/4_CNN_architectrue.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/AlexNet.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/LeNet5.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/MyCNN.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/cifar_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/model.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/model_compare.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/resnet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/ResNet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/carif10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/minivgg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/minivgg_data_aug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/trained_models/MiniVGG_CNN_model.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3/book_content/trained_models/MiniVGG_CNN_model_augu.h5" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,14 +32,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/week 3/a_fundaments_cnn.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/week 2/tf_1_DNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+            <state relative-caret-position="81">
+              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="97" selection-end-column="24" />
               <folding>
-                <element signature="e#216#281#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#989#1050#0" />
               </folding>
             </state>
           </provider>
@@ -33,6 +64,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>class_names</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -41,24 +77,17 @@
       <list>
         <option value="$PROJECT_DIR$/week 3/fundaments_cnn.py" />
         <option value="$PROJECT_DIR$/week 3/a_fundaments_cnn.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/DL.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/load_model.py" />
+        <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/cifar_data.py" />
+        <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2023" />
-    <option name="y" value="29" />
-    <option name="width" value="698" />
-    <option name="height" value="867" />
+    <option name="x" value="1946" />
+    <option name="y" value="170" />
+    <option name="width" value="909" />
+    <option name="height" value="892" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -66,6 +95,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -87,16 +117,29 @@
             <path>
               <item name="DL" type="b2602c69:ProjectViewProjectNode" />
               <item name="DL" type="462c0819:PsiDirectoryNode" />
-              <item name="week 3" type="462c0819:PsiDirectoryNode" />
+              <item name="week 3 CNN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DL" type="462c0819:PsiDirectoryNode" />
+              <item name="week 3 CNN" type="462c0819:PsiDirectoryNode" />
+              <item name="kinds of cnn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DL" type="462c0819:PsiDirectoryNode" />
+              <item name="week 3 CNN" type="462c0819:PsiDirectoryNode" />
+              <item name="kinds of cnn" type="462c0819:PsiDirectoryNode" />
+              <item name="trained_models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RunDashboard">
@@ -128,13 +171,9 @@
     <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13751763" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23060648" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -142,6 +181,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -154,6 +197,44 @@
           <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
           <folding>
             <element signature="e#216#281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week 2/tf_1_DNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/cifar_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/4_CNN_architectrue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2511">
+          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="97" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#989#1050#0" />
           </folding>
         </state>
       </provider>
