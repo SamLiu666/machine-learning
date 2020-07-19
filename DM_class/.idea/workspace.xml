@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b60b45a3-f197-44a0-81e3-b3134f120017" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/1_implement.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/resnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/cifar_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/model_compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py" beforeDir="false" afterPath="$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DL/week 3/book_content/resnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/DL/week 3/book_content/resnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OP/Assignment 1 All Different/run.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OP/Assignment 1 All Different/run.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/1_implement.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -27,11 +31,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="162" column="21" lean-forward="true" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+            <state relative-caret-position="-567">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/resnet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="653">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -40,8 +65,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/4_CNN_architectrue.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="72" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/model_compare.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="41" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -61,27 +102,24 @@
       <list>
         <option value="$PROJECT_DIR$/DL/week 3/book_content/1_implement.py" />
         <option value="$PROJECT_DIR$/DL/week 3/book_content/ResNet.py" />
-        <option value="$PROJECT_DIR$/DL/week 3/book_content/resnet.py" />
         <option value="$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py" />
+        <option value="$PROJECT_DIR$/DL/week 3/book_content/cifr_data.py" />
+        <option value="$PROJECT_DIR$/DL/week 3/book_content/cifar_data.py" />
+        <option value="$PROJECT_DIR$/DL/week 3/book_content/resnet.py" />
         <option value="$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/DM_class.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/DL/week 3/book_content/CNN_architectrue.py" />
+        <option value="$PROJECT_DIR$/DL/week 3/book_content/4_CNN_architectrue.py" />
+        <option value="$PROJECT_DIR$/DL/week 3/model_compare.py" />
+        <option value="$PROJECT_DIR$/DL/week 3/book_content/trained_models/model_compare.py" />
+        <option value="$PROJECT_DIR$/DL/week 3/book_content/model_compare.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="38" />
-    <option name="y" value="60" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1941" />
+    <option name="y" value="135" />
+    <option name="width" value="909" />
+    <option name="height" value="892" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -114,6 +152,14 @@
               <item name="week 3" type="462c0819:PsiDirectoryNode" />
               <item name="book_content" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DM_class" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DM_class" type="462c0819:PsiDirectoryNode" />
+              <item name="DL" type="462c0819:PsiDirectoryNode" />
+              <item name="week 3" type="462c0819:PsiDirectoryNode" />
+              <item name="book_content" type="462c0819:PsiDirectoryNode" />
+              <item name="trained_models" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -122,7 +168,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="copyright" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\machine learning\DM_class\DL\week 3\book_content" />
+      <recent name="D:\machine learning\DM_class\DL\week 3\book_content\trained_models" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -150,29 +203,68 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14120126" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22849083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/test.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/model.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/CNN_architectrue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-535">
+          <caret line="132" column="75" selection-start-line="132" selection-start-column="75" selection-end-line="132" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#2704#2722#0" />
+            <element signature="e#4512#4533#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/cifar_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/1_implement.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="599">
@@ -183,26 +275,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/resnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="653">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py">
+    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/4_CNN_architectrue.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="162" column="21" lean-forward="true" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+        <state>
+          <caret selection-end-line="72" selection-end-column="17" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DL/week 3/book_content/model_compare.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="41" />
         </state>
       </provider>
     </entry>

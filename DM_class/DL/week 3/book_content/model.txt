@@ -1,0 +1,3 @@
+LeNet5   time   82.2345199584961    AlexNet   time   215.45081973075867    MyCNN   time   486.6250228881836    ResNet   time   662.9733195304871    
+LeNet5   loss   1.575899446105957    AlexNet   loss   1.3081466011047362    MyCNN   loss   1.0375914037704468    ResNet   loss   1.2145104179382324    
+LeNet5   acc   0.424699991941452    AlexNet   acc   0.5227000117301941    MyCNN   acc   0.6352999806404114    ResNet   acc   0.5829    

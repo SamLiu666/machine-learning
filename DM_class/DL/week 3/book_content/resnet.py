@@ -77,6 +77,7 @@ class ResNet:
         self.model.compile(optimizer=self.optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
     def fit(self, X_train, y_train, X_valid=None, y_valid=None, batch_size=None, num_epochs=None, verbose=None):
+    #def fit(self, X_train, y_train, X_valid=None, y_valid=None, batch_size=None, num_epochs=None, verbose=None):
         batch_size = batch_size if batch_size is not None else self.batch_size
         num_epochs = num_epochs if num_epochs is not None else self.num_epochs
         verbose = verbose if verbose is not None else self.num_epochs
@@ -96,5 +97,5 @@ class ResNet:
     def summary(self):
         print(self.model.summary())
 
-    def save(self):
+    def save_model(self):
         self.model.save("ResNet.h5")

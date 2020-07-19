@@ -1,3 +1,5 @@
+data -> model -> accuracy  -> save -> predict 
+
 tensorboard:
 
 ```python

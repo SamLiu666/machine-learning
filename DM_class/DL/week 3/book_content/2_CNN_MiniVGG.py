@@ -1,3 +1,4 @@
+import csv
 import tensorflow as tf
 from tensorflow import keras
 from keras import datasets, models, layers
@@ -7,7 +8,7 @@ import numpy as np
 import os, time
 from resnet import ResNet
 from keras.preprocessing.image import ImageDataGenerator
-os.environ['CUDA_VISIBLE_DEVICES'] = '/device:GPU:0'  # 指定使用GPU
+os.environ['CUDA_VISIBLE_DEVICES'] = '/device:GPU:0'  # use GPU
 K.clear_session()  # Some memory clean-up
 
 
@@ -56,8 +57,15 @@ def load_cifar_data():
     np.random.shuffle(idxs)
     X_train_full = X_train_full[idxs]
     y_train_full = y_train_full[idxs]
-    X_train, y_train = X_train_full[0:15000], y_train_full[0:15000]
-    X_valid, y_valid = X_train_full[15000:25000], y_train_full[15000:25000]
+    X_train, y_train = X_train_full[0:20000], y_train_full[0:20000]
+    X_valid, y_valid = X_train_full[20000:40000], y_train_full[20000:40000]
+
+    ##############################################################################
+    # for test
+    # X_train, y_train = X_train_full[0:100], y_train_full[0:100]
+    # X_valid, y_valid = X_train_full[100:200], y_train_full[100:200]
+    # X_test, y_test  = X_test[:100], y_test[:100]
+    ##############################################################################
     return X_train, y_train, X_valid, y_valid, X_test, y_test
 
 
@@ -92,7 +100,7 @@ def build_model():
 
 
 def trian(vgg_model, X_train, y_train, X_valid, y_valid, X_test, y_test, aumentation_flag=None):
-    # batch_size = 1024 (default)
+    # batch_size = 32 (default)
     opt = keras.optimizers.SGD(lr=0.001, decay=0.01 / 40, momentum=0.9, nesterov=True)
     vgg_model.compile(optimizer=opt, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
@@ -103,7 +111,7 @@ def trian(vgg_model, X_train, y_train, X_valid, y_valid, X_test, y_test, aumenta
         history = vgg_model.fit_generator(aug.flow(x=X_train, y=y_train, batch_size=32), epochs=20,
                                           validation_data=(X_valid, y_valid))
     else:
-        history = vgg_model.fit(x=X_train, y=y_train, batch_size=512, epochs=20, validation_data=(X_valid, y_valid))
+        history = vgg_model.fit(x=X_train, y=y_train, batch_size=32, epochs=20, validation_data=(X_valid, y_valid))
 
     test_loss, test_acc = vgg_model.evaluate(X_test, y_test, verbose=1, batch_size=64)
     print("Test acc is {}".format(test_acc))
@@ -111,14 +119,14 @@ def trian(vgg_model, X_train, y_train, X_valid, y_valid, X_test, y_test, aumenta
 
 
 if __name__ == '__main__':
-    cost_time, acc, loss = {}, {}, {}
+    cost_time, acc, loss = {}, {}, {}  # save training results
     X_train, y_train, X_valid, y_valid, X_test, y_test = load_cifar_data()
     ##########################################################################
     print("------------------------------------------------------------\n")
     print("trian model")
     vgg_model = build_model()
     #vgg_model.summary()
-    #plot_images(X_train, y_train)
+    plot_images(X_train, y_train)
 
     start = time.time()
     history, test_loss, test_acc = trian(vgg_model, X_train, y_train, X_valid, y_valid, X_test, y_test)
@@ -136,11 +144,11 @@ if __name__ == '__main__':
 
     #######################################################################################
     # data augumentation train
-    K.clear_session()  # Some memory clean-up
+    # K.clear_session()  # Some memory clean-up
     print("------------------------------------------------------------\n")
     print("trian model")
     start = time.time()
-    history_augu, test_loss_augu, test_acc_augu = trian(vgg_model, X_train, y_train, X_valid, y_valid, X_test, y_test,aumentation_flag=True)
+    history_augu, test_loss_augu, test_acc_augu = trian(vgg_model, X_train, y_train, X_valid, y_valid, X_test, y_test, aumentation_flag=True)
     end = time.time()
     # print("total time: ", end - start)
     cost_time["MiniVGG_data_aug"]= end - start
@@ -158,8 +166,8 @@ if __name__ == '__main__':
     res_net.build()
     res_net.summary()
     start = time.time()
-    res_net.fit(X_train, y_train, X_valid, y_valid, batch_size=1024, num_epochs=20)
-    test_loss_resnet, test_acc_resnet = res_net.evaluate(X_test, y_test)
+    res_net.fit(X_train, y_train, X_valid, y_valid, batch_size=32, num_epochs=20)
+    test_acc_resnet, test_loss_resnet = res_net.evaluate(X_test, y_test)
     end = time.time()
     #print("total time: ", end - start)
     cost_time["ResNet"]= end - start
@@ -176,4 +184,18 @@ if __name__ == '__main__':
     print("cost_time:  ", cost_time)
     print("loss:  ", loss)
     print("accuracy:  ", acc)
-    # res_net.save()
+    # res_net.save_model()
+
+    cost_time["record"]= "time"
+    loss["record"] = "loss"
+    acc["record"] = "accuracy"
+
+    # write to txt
+    data = [cost_time, loss, acc]
+    with open('model.txt', 'a', newline='', encoding='utf-8') as f:
+        for d in data:
+            for i, j in d.items():
+                f.writelines((i + "   " + str(j) + "    "))
+            f.write("\n")
+        f.close()
+    print("\n all done")
