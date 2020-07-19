@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b60b45a3-f197-44a0-81e3-b3134f120017" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/cifar_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DL/week 3/book_content/model_compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py" beforeDir="false" afterPath="$PROJECT_DIR$/DL/week 3/book_content/2_CNN_MiniVGG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/DL/week 3/book_content/3_reload_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DL/week 3/book_content/resnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/DL/week 3/book_content/resnet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OP/Assignment 1 All Different/run.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OP/Assignment 1 All Different/run.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
