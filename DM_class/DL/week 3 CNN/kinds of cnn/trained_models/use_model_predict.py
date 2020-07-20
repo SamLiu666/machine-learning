@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from keras import datasets
 from keras import backend as K
+from keras.backend import  manual_variable_initialization(True)
 K.clear_session()  # Some memory clean-up
 
 
@@ -17,7 +18,6 @@ def small_data_try(x0, y0, x1, y1):
     # opt = keras.optimizers.SGD(lr=0.001, decay=0.01 / 40, momentum=0.9, nesterov=True)
     # model.compile(optimizer=opt, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
     # history = model.fit(X_train, y_train, batch_size=32, epochs=20, validation_data=(X_valid, y_valid))
-
 
     results = model.predict(batch, verbose=1)
     print(results.shape, "\n", y0[0], y1)
@@ -70,20 +70,25 @@ def model_prediction(model_name, test_size):
 
     model = keras.models.load_model(model_name)
     model.summary()
-    r = model.predict(X_test[:test_size], batch_size=32, verbose=1)
+    # r = model.predict(X_test[:test_size], batch_size=32, verbose=1)
+    opt = keras.optimizers.SGD(lr=0.001, decay=0.01 / 40, momentum=0.9, nesterov=True)
+    model.compile(optimizer=opt, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    test_loss, test_acc = model.evaluate(X_test, y_test, verbose=1, batch_size=64)
     count = 0
     wrong_names = []
-    for i in range(test_size):
-        if np.argmax(r[i]) == y_test[i][0]:
-            count += 1
-        else:
-            wrong_names.append(class_names[y_test[i][0]])
+    # for i in range(test_size):
+    #     if np.argmax(r[i]) == y_test[i][0]:
+    #         count += 1
+    #     else:
+    #         wrong_names.append(class_names[y_test[i][0]])
     # print(count, wrong_names)
 
     # plot_images(X_test[:test_size], y_train=y_test[:test_size])
     # plot_images(X_test[:test_size], prediction=r, flag=True)
 
-    return count/test_size
+    #return count/test_size
+    return test_loss, test_acc
+
 
 if __name__ == '__main__':
 
@@ -92,8 +97,8 @@ if __name__ == '__main__':
 
     for n in name:
         K.clear_session()  # Some memory clean-up
-        my_per = model_prediction(n, 10000)
-        model_percent[n] = my_per
+        test_loss, test_acc = model_prediction(n, 10000)
+        model_percent[n] = (test_loss, test_acc)
 
     print(model_percent)
 

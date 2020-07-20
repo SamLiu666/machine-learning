@@ -14,15 +14,14 @@ class AllDiffProp(Propagator):
     def __init__(self, solver, args, anns):
         # TODO
         super().__init__(self)
-        self.args = args  # pass parametes
-        self.anns = anns  # save answer
-        #print("%%", type(self.args[0][0]))
+        self.args = args  # pass parametes list
+        self.anns = anns  # save answer list
+        # print("%%", type(self.args[0][0]))
         #print("%%", type(self.args), len(self.args))
         #print("%%", self.anns, len(self.anns))
         # Make sure 'wakeup' will be called whenever x is fixed.
-
         for numbers in self.args:
-            #print("%%", numbers)
+            #print("%%", numbers)  # numbers list
             for n in numbers:
                 # print("%%", type(n)==int)
                 if type(n) == int:
@@ -32,11 +31,22 @@ class AllDiffProp(Propagator):
                 #print("%%", "wakeup")
             
     def wakeup(self, solver):
-        print("%%", "wakeup")  # check for wake up
+        #print("%%", "wakeup")  # check for wake up
         self.queue(solver)
-    
+
     def propagate(self, solver):
         # TODO
-        #print("%%", type(solver))
-        
-        return True
+        temp = []
+        for numbers in self.args:
+            #print("%%", numbers)  # numbers list
+            if type(numbers) == int:
+                continue
+            else:
+                if numbers[0].is_fixed():
+                    self.anns.append(numbers[0])
+                else:
+                    numbers[0].remove_value(solver, numbers[0].value())  # wake up
+                            # self.anns.append(n.value)
+        for a in self.anns:
+            print("%%", a)
+        #print("%%", self.anns)

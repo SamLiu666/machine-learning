@@ -6,7 +6,7 @@ import os, time
 from cifar_data import Cifar10
 from keras import backend as K
 K.clear_session()  # Some memory clean-up
-
+from keras.utils import plot_model
 # os.environ['CUDA_VISIBLE_DEVICES'] = '/device:GPU:0'  # use GPU
 
 ##########################################################################
@@ -74,7 +74,9 @@ def resnet():
     return resNet
 
 if __name__ == '__main__':
-    #my_cnn()
-    #lenet_5()
-    #alexnet()
-    resnet()
+
+    # l = lenet_5()
+    # model =  alexnet()
+    #model = resnet()
+    model = my_cnn()
+    plot_model(model, to_file='sentiment_analysis/my_cnn.png', show_shapes=True, show_layer_names=False)

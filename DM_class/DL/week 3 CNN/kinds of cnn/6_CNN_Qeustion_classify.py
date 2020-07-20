@@ -3,6 +3,7 @@ import collections
 import math,os,random
 import numpy as np
 import tensorflow as tf
+from keras.layers import Embedding
 from tensorflow import keras
 from keras import datasets, models, layers
 import zipfile
@@ -13,6 +14,8 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from keras import backend as K
 K.clear_session()  # Some memory clean-up
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
 
 
 class DataManager:
@@ -114,28 +117,29 @@ class DataManager:
         return data2feed, label2feed
 
 
-def build_cnn():
+def build_cnn(dictionary):
     my_model = models.Sequential()
-    my_model.add(layers.Conv1D(32, 9, padding="same", activation="relu", input_shape=(38, 8916)))
-    my_model.add(layers.BatchNormalization(momentum=0.9))
+    my_model.add(Embedding(len(dictionary)+1, 300, input_length=50))
+    my_model.add(layers.Conv1D(256, 5, padding="same", activation="relu"))
+    # my_model.add(layers.BatchNormalization(momentum=0.9))
+    my_model.add(layers.MaxPooling1D(3, 3, padding="same"))
     my_model.add(layers.Dropout(rate=0.25))
 
-    my_model.add(layers.Conv1D(64, 9, padding="same", activation="relu"))
-    my_model.add(layers.BatchNormalization(momentum=0.9))
-    my_model.add(layers.MaxPool1D(pool_size=2, padding="same"))
+    my_model.add(layers.Conv1D(128, 5, padding="same", activation="relu"))
+    # my_model.add(layers.BatchNormalization(momentum=0.9))
+    my_model.add(layers.MaxPooling1D(3,3, padding="same"))
     my_model.add(layers.Dropout(rate=0.25))
 
-    my_model.add(layers.Conv1D(64, 9, padding="same", activation="relu"))
-    my_model.add(layers.BatchNormalization(momentum=0.9))
-    my_model.add(layers.MaxPool1D(pool_size=2, padding="same"))
+    my_model.add(layers.Conv1D(64, 3, padding="same", activation="relu"))
+    # my_model.add(layers.BatchNormalization(momentum=0.9))
+    # my_model.add(layers.MaxPool1D(pool_size=2, padding="same"))
     my_model.add(layers.Dropout(rate=0.25))
 
     my_model.add(layers.Flatten())
-    my_model.add(layers.Dense(512, activation="relu"))
-    my_model.add(layers.BatchNormalization(momentum=0.9))
+    my_model.add(layers.Dense(256, activation="relu"))
     my_model.add((layers.Dropout(rate=0.25)))
     my_model.add(layers.Dense(6, activation="softmax"))
-    #my_model.summary()
+    my_model.summary()
     return my_model
 
 
@@ -155,28 +159,18 @@ dictionary,_,_= DataManager.build_dictionary_count(all_questions)
 train_dm.build_numeral_data(dictionary)
 test_dm.build_numeral_data(dictionary)
 train_dm.train_valid_split()
+
 data_batch, label_batch= train_dm.next_batch(batch_size=5, vocab_size= len(dictionary), input_len= pad_len)
 print("Sample data batch- label batch \n")
 print(data_batch.shape)
 print(label_batch.shape)
 
 ###################################################################################################################
-cnn_model = build_cnn()
-
-batch_size= 32
-epochs= 100
-# train_size= len(train_dm.train_numeral)
-# iter_per_epoch= math.ceil(train_size/batch_size)
-# network= SC_CNN(height= pad_len, width= len(dictionary),batch_size=batch_size, epochs= epochs, num_classes= train_dm.num_classes)
-# network.build()
-
-train2feed, train_label2feed= train_dm.convert_to_feed(train_dm.train_numeral, train_dm.train_labels,
-                                     input_len= pad_len, vocab_size=(len(dictionary)//4+1))
-
-valid2feed, valid_label2feed=  train_dm.convert_to_feed(train_dm.valid_numeral, train_dm.valid_labels,
-                                     input_len= pad_len, vocab_size=len(dictionary))
-
-test2feed, test_label2feed= test_dm.convert_to_feed(np.array(test_dm.numeral_data), np.array(test_dm.numeral_labels),
-                                     input_len= pad_len, vocab_size=len(dictionary))
-
-print(train2feed, train2feed.shape)
+cnn_model = build_cnn(dictionary)
+cnn_model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
+one_hot_labels = keras.utils.to_categorical(y_train, num_classes=3)  # 将标签转换为one-hot编码
+model.fit(x_train_padded_seqs, one_hot_labels,epochs=5, batch_size=800)
+y_predict = model.predict_classes(x_test_padded_seqs)  # 预测的是类别，结果就是类别号
+y_predict = list(map(str, y_predict))
+print('准确率', metrics.accuracy_score(y_test, y_predict))
+print('平均f1-score:', metrics.f1_score(y_test, y_predict, average='weighted'))

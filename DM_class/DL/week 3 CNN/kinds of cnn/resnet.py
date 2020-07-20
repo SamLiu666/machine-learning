@@ -5,6 +5,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from functools import partial
+from cifar_data import Cifar10
+
+
 bn_momentum= 0.9
 bn_eps= 2E-5
 reg= 0.001
@@ -97,5 +100,26 @@ class ResNet:
     def summary(self):
         print(self.model.summary())
 
+    # save model
     def save_model(self):
-        self.model.save("ResNet.h5")
+        self.model.save("models\ResNet.h5")
+
+
+def run_resnet():
+    cifar_dataset = Cifar10(50,100)
+    X_train, y_train, X_valid, y_valid, X_test, y_test = cifar_dataset.get_cifar_data()
+
+    res_net = ResNet()
+    res_net.build()
+    res_net.summary()
+
+    # train and save model
+    res_net.fit(X_train, y_train, X_valid, y_valid, batch_size=32, num_epochs=10)
+    res_net.evaluate(X_test, y_test)
+    res_net.plot_progress()
+    res_net.save_model()
+
+# reload model
+# new_model = keras.models.load_model('models\ResNet.h5')
+# new_model.summary()
+# new_model.evaluate(X_test, y_test)

@@ -10,6 +10,10 @@ tf.disable_v2_behavior()
 from keras import backend as K
 K.clear_session()  # Some memory clean-up
 
+# 模型保存图片
+from keras.utils import plot_model
+plot_model(model, to_file='sentiment_analysis/my_cnn.png', show_shapes=True, show_layer_names=False)
+
 tensorboard --logdir logs
 http://localhost:6006  # 输入网址 可视化
         
@@ -17,7 +21,6 @@ http://localhost:6006  # 输入网址 可视化
 model.save('my_model.h5')
 # 重新创建完全相同的模型，包括其权重和优化程序
 new_model = keras.models.load_model('my_model.h5')
-
 # 显示网络结构
 new_model.summary()
 
