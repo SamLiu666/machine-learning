@@ -1,5 +1,4 @@
 minizinc --solver org.fit5220.sprue-cp models\sudoku.mzn data\d1.dzn
 
-right command
-
+right command：
 minizinc --solver org.fit5220.sprue-cp sudoku.mzn ..\data\d1.dzn

@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fb41ce4-def4-48c8-915b-8e77b38886b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week 3 CNN/image_process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week 3 CNN/kinds of cnn/5_miniVGG_tf1x.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week 3 CNN/kinds of cnn/6_CNN_Qeustion_classify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/a_fundaments_cnn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/1_implement.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/2_CNN_MiniVGG.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/3_reload_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/4_CNN_architectrue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/AlexNet.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/LeNet5.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/MyCNN.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/cifar_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/model.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/model_compare.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/resnet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/ResNet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/carif10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/minivgg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/results/minivgg_data_aug.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/trained_models/MiniVGG_CNN_model.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week 3/book_content/trained_models/MiniVGG_CNN_model_augu.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week 3 CNN/kinds of cnn/cifar_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/week 3 CNN/kinds of cnn/cifar_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OP/Assignment 1 All Different/models/sudoku.mzn" beforeDir="false" afterPath="$PROJECT_DIR$/../OP/Assignment 1 All Different/models/sudoku.mzn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OP/Assignment 1 All Different/propagators/my_all_different.mzn.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OP/Assignment 1 All Different/propagators/my_all_different.mzn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OP/Assignment 1 All Different/run.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../OP/Assignment 1 All Different/run.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,30 +18,70 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/week 2/tf_1_DNN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="97" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#989#1050#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5213904">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/5_miniVGG_tf1x.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-54">
+                  <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/4_CNN_architectrue.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="839">
+                  <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+                  <folding>
+                    <element signature="e#0#23#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/week 3 CNN/image_process.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="837">
+                  <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#0#23#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/6_CNN_Qeustion_classify.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="146" column="88" selection-start-line="146" selection-start-column="88" selection-end-line="146" selection-end-column="88" />
+                  <folding>
+                    <element signature="e#0#37#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/4_CNN_architectrue.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-2214">
+                  <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="42" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,14 +104,17 @@
         <option value="$PROJECT_DIR$/week 3/fundaments_cnn.py" />
         <option value="$PROJECT_DIR$/week 3/a_fundaments_cnn.py" />
         <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/load_model.py" />
-        <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/cifar_data.py" />
         <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py" />
+        <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/cifar_data.py" />
+        <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/5_miniVGG_tf1x.py" />
+        <option value="$PROJECT_DIR$/week 3 CNN/image_process.py" />
+        <option value="$PROJECT_DIR$/week 3 CNN/kinds of cnn/6_CNN_Qeustion_classify.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1946" />
-    <option name="y" value="170" />
+    <option name="x" value="2141" />
+    <option name="y" value="42" />
     <option name="width" value="909" />
     <option name="height" value="892" />
   </component>
@@ -95,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -125,17 +153,11 @@
               <item name="week 3 CNN" type="462c0819:PsiDirectoryNode" />
               <item name="kinds of cnn" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DL" type="462c0819:PsiDirectoryNode" />
-              <item name="week 3 CNN" type="462c0819:PsiDirectoryNode" />
-              <item name="kinds of cnn" type="462c0819:PsiDirectoryNode" />
-              <item name="trained_models" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,7 +193,7 @@
     <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23060648" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2087447" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -191,16 +213,7 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/week 3/a_fundaments_cnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
-          <folding>
-            <element signature="e#216#281#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/week 3/a_fundaments_cnn.py" />
     <entry file="file://$PROJECT_DIR$/week 2/tf_1_DNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -208,19 +221,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/cifar_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="99">
+          <caret line="28" selection-start-line="28" selection-end-line="29" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/5_miniVGG_tf1x.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week 3 CNN/image_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/4_CNN_architectrue.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2511">
+        <state relative-caret-position="839">
           <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -228,13 +268,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/trained_models/use_model_predict.py">
+    <entry file="file://$PROJECT_DIR$/week 3 CNN/kinds of cnn/6_CNN_Qeustion_classify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="97" selection-end-column="24" />
+        <state relative-caret-position="378">
+          <caret line="146" column="88" selection-start-line="146" selection-start-column="88" selection-end-line="146" selection-end-column="88" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#989#1050#0" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>

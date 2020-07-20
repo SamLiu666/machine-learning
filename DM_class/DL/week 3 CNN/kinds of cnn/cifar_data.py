@@ -46,6 +46,8 @@ class Cifar10:
         plt.show()
 
 
-c = Cifar10(50,100)
-X_train, y_train, X_valid, y_valid, X_test, y_test = c.get_cifar_data()
-c.plot_images(X_train, y_train)
+
+
+# c = Cifar10(50,100)
+# X_train, y_train, X_valid, y_valid, X_test, y_test = c.get_cifar_data()
+# c.plot_images(X_train, y_train)

@@ -27,5 +27,5 @@ constraint forall (i,j in 1..n)(if hints[i,j]>0 then x[i,j]=hints[i,j] endif);
 
 % All rows, columns and 3x3 block must be all-different
 constraint forall (i in 1..n) (my_all_different(x[i,..]));
-constraint forall (i in 1..n) (my_all_different(x[..,i]));
-constraint forall (i,j in 1..s)(my_all_different(p,q in 1..s)(x[s*(i-1)+p,s*(j-1)+q]));
+% constraint forall (i in 1..n) (my_all_different(x[..,i]));
+% constraint forall (i,j in 1..s)(my_all_different(p,q in 1..s)(x[s*(i-1)+p,s*(j-1)+q]));
