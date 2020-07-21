@@ -16,6 +16,7 @@ class AllDiffProp(Propagator):
         super().__init__(self)
         self.args = args  # pass parametes list
         self.anns = anns  # save answer list
+        self.count = 0
         # print("%%", type(self.args[0][0]))
         #print("%%", type(self.args), len(self.args))
         #print("%%", self.anns, len(self.anns))
@@ -36,17 +37,45 @@ class AllDiffProp(Propagator):
 
     def propagate(self, solver):
         # TODO
-        temp = []
-        for numbers in self.args:
-            #print("%%", numbers)  # numbers list
-            if type(numbers) == int:
-                continue
-            else:
-                if numbers[0].is_fixed():
-                    self.anns.append(numbers[0])
+        # .1 how can I remove the int value and intVAR value 
+
+        temp= 0
+        for number in self.args:
+            #print("%%", number)  # number is list
+
+            self.count += 1
+            temp = []
+            print("%% the number loop: ", self.count, self.anns)
+
+            for n in number:  # n is int or intVar
+
+                # if n is int, add it into exit for deleting
+                if type(n) == int:
+                    temp.append([n])
+
+                elif n.is_fixed():
+                    # if n is_fixed, add it into exit for deleting
+                    #print("%%", n._domain)
+                    #para = n.in_domain()
+                    #print("%%", n._domain, para)
+                    temp.append(n)
+
                 else:
-                    numbers[0].remove_value(solver, numbers[0].value())  # wake up
+                    # remove the exits value from domain
+                    if n.in_domain(temp[0]):
+                        n.remove_value(solver, 6)
+                        print("%% values: ", n.domain())
+
+            print("%%temporary: ",temp)
+
+                
+                    #print("%%", n)
+           
+            # else:
+            #     print("%%", number[0])
+                # if number[0].is_fixed():
+                #     self.anns.append(number[0])
+                # else:
+                #     number[0].remove_value(solver, number[0].value())  # wake up
                             # self.anns.append(n.value)
-        for a in self.anns:
-            print("%%", a)
-        #print("%%", self.anns)
+            
