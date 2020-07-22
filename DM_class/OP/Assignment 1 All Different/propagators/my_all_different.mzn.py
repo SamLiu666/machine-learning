@@ -36,46 +36,75 @@ class AllDiffProp(Propagator):
         self.queue(solver)
 
     def propagate(self, solver):
-        # TODO
-        # .1 how can I remove the int value and intVAR value 
 
-        temp= 0
-        for number in self.args:
-            #print("%%", number)  # number is list
+        for numbers in self.args:
+            #print("%%", numbers)  # numbers list
+            for number in numbers:
+                if type(number)!=int:
 
-            self.count += 1
-            temp = []
-            print("%% the number loop: ", self.count, self.anns)
+                    for n in numbers:
+                        # print("%%", type(n)==int)
+                        if type(n) != int:
+                            if number.is_fixed() and not n.is_fixed():
+                                n.remove_value(solver, number.value())
+                    
 
-            for n in number:  # n is int or intVar
 
-                # if n is int, add it into exit for deleting
-                if type(n) == int:
-                    temp.append([n])
+    # def propagate(self, solver):
+    #     # TODO
+    #     # .1 how can I remove the int value and intVAR value 
+    #     #print("%%", self.args) # list of 9 list including int and intVar
 
-                elif n.is_fixed():
-                    # if n is_fixed, add it into exit for deleting
-                    #print("%%", n._domain)
-                    #para = n.in_domain()
-                    #print("%%", n._domain, para)
-                    temp.append(n)
+    #     for number in self.args:
+    #         # 1. do the first loop for one 
+    #         #print("%%", number)  # number is list
 
-                else:
-                    # remove the exits value from domain
-                    if n.in_domain(temp[0]):
-                        n.remove_value(solver, 6)
-                        print("%% values: ", n.domain())
+    #         self.count += 1
+    #         temp = set() #
+    #         #print("%% the number loop: ", self.count, self.anns)
 
-            print("%%temporary: ",temp)
+    #         for n in number:  # n is int or intVar
 
-                
-                    #print("%%", n)
-           
-            # else:
-            #     print("%%", number[0])
-                # if number[0].is_fixed():
-                #     self.anns.append(number[0])
-                # else:
-                #     number[0].remove_value(solver, number[0].value())  # wake up
-                            # self.anns.append(n.value)
-            
+    #             # if n is int, add it into exit for deleting
+    #             if type(n) == int:
+    #                 # temp.append(n)  # save the int value
+    #                 temp.add(n)
+
+    #             elif n.is_fixed():
+    #                 # 2. if n is_fixed, add it into exit for deleting
+    #                 #  n.domain() is set
+    #                 #print("%% n -varInt: ", n.domain(), type(n.domain()))
+    #                 #para = n.in_domain()
+    #                 # continue
+    #                 para = list(n.domain())
+    #                 temp.add(n)
+    #                 #temp.append(para)  
+    #                 #print("%%", n._domain, para)
+                    
+
+    #             else:
+    #                 # 3. remove all the exits value temp from other domain
+
+    #                 # pass
+    #                 if temp:
+                        
+    #                     #print("%% 1. temporary: ", temp, type(temp))  # temp is list of int and intVAR
+    #                     tt = list(temp)
+    #                     for t in tt:
+    #                         #print("%%", type(t)) # int and intVar
+    #                         if type(t) == int:
+    #                             n.remove_value(solver, t)
+    #                             print("%%2. delte: ", t)
+    #                             print("%%n domains ==: ", n)
+
+    #                         # elif n.in_domain(t.domain()):
+    #                         else:
+    #                             p = t.domain()
+    #                             print("%% p= ", p)
+    #                             n.remove_value(solver, p)
+    #                             print("%%2.2. delte: ", p)
+    #                             print("%%n domains ==: ", n)
+
+            #print("%%temporary: ", temp) 
+
+            # print("%%temporary: ",temp)  
