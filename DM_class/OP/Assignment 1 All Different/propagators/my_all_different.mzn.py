@@ -14,21 +14,19 @@ class AllDiffProp(Propagator):
     def __init__(self, solver, args, anns):
         # TODO
         super().__init__(self)
-        self.args = args  # pass parametes list
+        self.args = args[0]  # pass parametes list, for just one domain important
         self.anns = anns  # save answer list
-        self.count = 0
         # print("%%", type(self.args[0][0]))
         #print("%%", type(self.args), len(self.args))
         #print("%%", self.anns, len(self.anns))
         # Make sure 'wakeup' will be called whenever x is fixed.
         for numbers in self.args:
             #print("%%", numbers)  # numbers list
-            for n in numbers:
-                # print("%%", type(n)==int)
-                if type(n) == int:
-                     continue
+            # print("%%", type(n)==int)
+            """part A: when x is fixed, wake up"""
+            if type(numbers) != int:
+                numbers.attach_event(Event.FIX, self.wakeup)  # wake up
                 # if n.is_fixed():
-                n.attach_event(Event.FIX, self.wakeup)  # wake up
                 #print("%%", "wakeup")
             
     def wakeup(self, solver):
@@ -36,17 +34,43 @@ class AllDiffProp(Propagator):
         self.queue(solver)
 
     def propagate(self, solver):
+        # sudo
+        ans = set([])  # save for values
+        count = 0   # count times
 
-        for numbers in self.args:
-            #print("%%", numbers)  # numbers list
-            for number in numbers:
-                if type(number)!=int:
 
-                    for n in numbers:
-                        # print("%%", type(n)==int)
-                        if type(n) != int:
-                            if number.is_fixed() and not n.is_fixed():
-                                n.remove_value(solver, number.value())
+        for i in range(0, 9):
+            if type(self.args[i]) == int:
+                for j in range(0, 9):
+                    if i!=j and type(self.args[j]) != int:
+                        # remove the fixed value from other domains
+                        self.args[j].remove_value(solver, self.args[i])
+
+        for i in range(0, 9):
+            for j in range(0, 9):
+                if i!=j and type(self.args[i]) != int and self.args[i].is_fixed():
+                    if type(self.args[j]) == IntVar and self.args[j].is_fixed():  # For intVar
+                        if self.args[j].value() == self.args[i].value():
+                            return False
+                    if type(self.args[j]) == int:
+                        if self.args[j] == self.args[i].value():
+                            return False
+
+        for i in range(0, 9):
+            if type(self.args[i]) != int and self.args[i].is_fixed():
+                for j in range(0, 9):
+                    if i!=j and type(self.args[j]) != int:
+                        # remove the fixed args[j] value
+                        self.args[j].remove_value(solver, self.args[i].value())
+
+        for i in range(0, 9):
+            # count the domian numbers
+            if type(self.args[i]) != int and len(self.args[i].domain()) > 1:
+                count += 1
+                ans = ans | set(self.args[i].domain())
+            if len(ans) < count:
+                return False
+        return True
                     
 
 
