@@ -1,3 +1,5 @@
+**一个时间段内的集中资料汇总学习**
+
 机器学习、统计学习方法：https://github.com/fengdu78/lihang-code
 
 ML tutorial: https://machinelearningmastery.com/start-here/#code_algorithms

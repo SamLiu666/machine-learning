@@ -1,3 +1,5 @@
+**此项目记录课程过程中的学习笔记和代码实现**
+
 data -> model -> accuracy  -> save -> predict 
 
 tensorboard:

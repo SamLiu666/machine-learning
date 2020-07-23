@@ -1,5 +1,21 @@
 # NLP
 
+## 文件内容
+
+kaggle nlp： kaggle 上的Nlp项目
+
+nlp basic： python nlp 处理入门，nltk
+
+NLP with CS 224N： MIT自然语言处理神课
+
+NLP with Harvard CS287： NLP课程
+
+NLP with Pytorch：框架使用
+
+NLP with tensorflow：框架使用
+
+##  学习课程资源总结：
+
 [常见面试题汇总](https://blog.csdn.net/qq_17677907/article/details/86448214)
 
 [nlp迁移学习](https://www.toutiao.com/i6637321233358668292/)  [BERT 的发展和展望](https://mp.weixin.qq.com/s/U_pYc5roODcs_VENDoTbiQ)
@@ -7,8 +23,6 @@
 source： https://github.com/NLP-LOVE/ML-NLP
 
 [论文学习资源](https://zhuanlan.zhihu.com/p/69358248)
-
-## 学习课程资源总结：
 
 [牛津大学NLP](https://github.com/oxford-cs-deepnlp-2017/lectures)
 

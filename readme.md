@@ -574,15 +574,15 @@ HYPERPARAMETER TUNING
 
 ## NLP
 
-NLP ， DL class
+NLP ， DL class 查看对应的名称文件
 
 ## CV
 
-DL-class
+DM-class 相关课程
 
 ## RS
 
-not include
+并未涉及
 
 
 
