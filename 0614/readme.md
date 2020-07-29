@@ -38,9 +38,9 @@ Internet search for neural networks and data minin：
 吴恩达课程：
 
 - 机器学习：done
-- 深度学习：
+- 深度学习：done
   1. NN and DL: done
-  2. Improving DNN
+  2. Improving DNN done
 
 # 实现 过程
 
