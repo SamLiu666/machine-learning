@@ -9,3 +9,4 @@ model.summary()
 
 data = mpimg.imread("1.jpg")
 print(data.shape)
+print()
