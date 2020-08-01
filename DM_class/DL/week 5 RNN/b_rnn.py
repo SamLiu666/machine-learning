@@ -4,7 +4,7 @@ from collections import Counter
 from tensorflow import keras
 from keras import layers
 import numpy
-
+from keras import backend as K
 tf.random.set_seed(42)
 
 
@@ -66,6 +66,7 @@ for X_batch, y_batch in train_set.take(2):
 
 print("#################################################################")
 print("# 3. RNN model and Training set")
+K.clear_session()
 embed_size = 128
 x = tf.keras.Input(shape=[None], dtype="int64")
 print(x.shape)
@@ -82,18 +83,28 @@ history = rnn_model.fit(train_set, steps_per_epoch=train_size // 64, epochs=3)
 
 print("#################################################################")
 print("# 3. RNN model and Training set")
-from keras import backend as K
+
 K.clear_session()
-model = keras.models.Sequential()
-model.add(layers.Embedding(vocab_size + num_oov_buckets, embed_size,
+# model = keras.models.Sequential()
+# model.add(layers.Embedding(vocab_size + num_oov_buckets, embed_size, input_shape=[None]))
+# model.add(layers.GRU(128, return_sequences=True))
+# model.add(layers.GRU(128))
+# model.add(layers.Dense(1, activation="sigmoid"))
+
+embed_size = 128
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Embedding(vocab_size + num_oov_buckets, embed_size,
                            mask_zero=True, # not shown in the book
-                           input_shape=[None]))
-model.add(layers.GRU(128, return_sequences=True))
-model.add(layers.GRU(128))
-model.add(layers.Dense(1, activation="sigmoid"))
+                           input_shape=[None]),
+    tf.keras.layers.GRU(128, return_sequences=True),
+    tf.keras.layers.GRU(128),
+    tf.keras.layers.Dense(1, activation="sigmoid")
+])
+
 model.summary()
 model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
 history = model.fit(train_set, steps_per_epoch=train_size // 64, epochs=3)
+
 
 test_set = datasets["test"].repeat(1).batch(32).map(preprocess)
 test_set = test_set.map(encode_words).prefetch(1)
