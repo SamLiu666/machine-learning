@@ -149,6 +149,7 @@ def CartoonNizer_2(image):
     # noisy = src_image + 0.6 * src_image.std() * np.random.random(src_image.shape)
     # noisy = np.clip(noisy, 0, 1)
     output = denoise_bilateral(image,sigma_color=0.01,sigma_spatial=5, multichannel=True)
+    # plot_show_one_image(output_1_2, path, name="bilateral")  # save cartoon
     return output
 
 
@@ -164,33 +165,34 @@ def CartoonNizer_3(image):
     plot_show_one_image(output, path, name="8 times bilateral filtering")
     return output
 
+if __name__ == '__main__':
 
-###########################################################################
-image_path = r"images\task1.jpg"  # image path
-image_original = io.imread(image_path)  # original
+    ###########################################################################
+    image_path = r"images\task1.jpg"  # image path
+    image_original = io.imread(image_path)  # original
 
-###########################################################################
-# task 1
-image = io.imread(image_path)
-output_1_1 = CartoonNizer_1(image)     # cartoon
-#plot_show_two_pic(image_original, output_1_1, title1="orginal image", title2="k-means cartoon image")   # show them together
+    ###########################################################################
+    # task 1
+    image = io.imread(image_path)
+    output_1_1 = CartoonNizer_1(image)     # cartoon
+    #plot_show_two_pic(image_original, output_1_1, title1="orginal image", title2="k-means cartoon image")   # show them together
 
-###########################################################################
-# task 2
-image_path = img_as_float(io.imread(image_path))
-output_1_2 = CartoonNizer_2(image_path)
-path = r"images\output\1_2_bilateral_cartoon.jpg"
-plot_show_one_image(output_1_2, path, name="bilateral")  # save cartoon
-#plot_show_two_pic(image_original, output_1_2, title1="orginal image", title2="bilateral_filtering cartoon image")
+    ###########################################################################
+    # task 2
+    image_path = img_as_float(io.imread(image_path))
+    output_1_2 = CartoonNizer_2(image_path)
+    path = r"images\output\1_2_bilateral_cartoon.jpg"
+    plot_show_one_image(output_1_2, path, name="bilateral")  # save cartoon
+    #plot_show_two_pic(image_original, output_1_2, title1="orginal image", title2="bilateral_filtering cartoon image")
 
-###########################################################################
-# task 3_1
-output_1_3_1 = CartoonNizer_3(image)  # already saved in function
-#plot_show_two_pic(image_original, output_1_3, title1="orginal image", title2="bilateral_filtering cartoon image")
+    ###########################################################################
+    # task 3_1
+    output_1_3_1 = CartoonNizer_3(image)  # already saved in function
+    #plot_show_two_pic(image_original, output_1_3, title1="orginal image", title2="bilateral_filtering cartoon image")
 
-# task 3_2: kmeans + bilateral
-output_1_3_2 = img_as_float(output_1_1) # output_1_1 from kmeans
-output = CartoonNizer_2(output_1_3_2)   # do the bilateral
-path = r"images\output\1_3_2_kmeans_bilateral_cartoon.jpg"
-plot_show_one_image(output, path, name="kmeans and bilateral")  # save cartoon
-# plot_show_two_pic(image_original, output_1_3_2, title1="orginal image", title2="bilateral_filtering cartoon image")
+    # task 3_2: kmeans + bilateral
+    output_1_3_2 = img_as_float(output_1_1) # output_1_1 from kmeans
+    output = CartoonNizer_2(output_1_3_2)   # do the bilateral
+    path = r"images\output\1_3_2_kmeans_bilateral_cartoon.jpg"
+    plot_show_one_image(output, path, name="kmeans and bilateral")  # save cartoon
+    # plot_show_two_pic(image_original, output_1_3_2, title1="orginal image", title2="bilateral_filtering cartoon image")
