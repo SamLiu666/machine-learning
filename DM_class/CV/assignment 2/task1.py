@@ -6,12 +6,13 @@ from scipy.stats import stats
 from skimage import io
 from skimage import data, img_as_float
 from skimage.restoration import denoise_bilateral
+from my_bilateral import my_own_bilateral
 
 
 ###################################################################
 # show images
 def plot_show_two_pic(one, two, title1=None, title2=None):
-    # plot two images for convience and comparation
+    # plot two images for convience and comparation, for debuging and comparing
     fig, axes = plt.subplots(1, ncols=2, figsize=(15, 8))
     axes[0].imshow(one, cmap='gray')
     axes[0].set_title(title1)
@@ -152,6 +153,12 @@ def CartoonNizer_2(image):
     # plot_show_one_image(output_1_2, path, name="bilateral")  # save cartoon
     return output
 
+def CartoonNizer_2_2(image):
+    print("###################################################################")
+    output = my_own_bilateral(image)
+    path = r"images\output\1_2_2_my_bilateral.jpg"
+    plot_show_one_image(output, path, name="my_bilateral")
+    return output
 
 def CartoonNizer_3(image):
     print("###################################################################")
@@ -165,25 +172,30 @@ def CartoonNizer_3(image):
     plot_show_one_image(output, path, name="8 times bilateral filtering")
     return output
 
+
 if __name__ == '__main__':
 
     ###########################################################################
     image_path = r"images\task1.jpg"  # image path
-    image_original = io.imread(image_path)  # original
+    image = io.imread(image_path)
+    #image_original = io.imread(image_path)  # original for comparasion
 
     ###########################################################################
     # task 1
-    image = io.imread(image_path)
     output_1_1 = CartoonNizer_1(image)     # cartoon
     #plot_show_two_pic(image_original, output_1_1, title1="orginal image", title2="k-means cartoon image")   # show them together
 
     ###########################################################################
-    # task 2
+    # task 2_1 function from module
     image_path = img_as_float(io.imread(image_path))
     output_1_2 = CartoonNizer_2(image_path)
     path = r"images\output\1_2_bilateral_cartoon.jpg"
     plot_show_one_image(output_1_2, path, name="bilateral")  # save cartoon
     #plot_show_two_pic(image_original, output_1_2, title1="orginal image", title2="bilateral_filtering cartoon image")
+
+    ###########################################################################
+    # task 2_2 my onw funtion, for saving time
+    output_1_2_2 = CartoonNizer_2_2(image)
 
     ###########################################################################
     # task 3_1
@@ -196,3 +208,4 @@ if __name__ == '__main__':
     path = r"images\output\1_3_2_kmeans_bilateral_cartoon.jpg"
     plot_show_one_image(output, path, name="kmeans and bilateral")  # save cartoon
     # plot_show_two_pic(image_original, output_1_3_2, title1="orginal image", title2="bilateral_filtering cartoon image")
+
