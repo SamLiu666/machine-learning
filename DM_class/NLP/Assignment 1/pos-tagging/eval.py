@@ -7,6 +7,7 @@ import sys
 import json
 import argparse
 from collections import Counter
+from tagger import viterbi_inference
 
 def main():
     parser = argparse.ArgumentParser()
@@ -28,7 +29,7 @@ def main():
                 for h,r in zip(hyp, ref):
                     if h == r:
                         tp += 1
-                        total += 1
+                    total += 1
     print("Accuracy :", tp / total, file=sys.stderr)
 
 
