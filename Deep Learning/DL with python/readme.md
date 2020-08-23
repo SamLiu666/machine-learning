@@ -4,9 +4,10 @@
 
 ```python
 from keras import backend as K
+K.clear_session()  # Some memory clean-up
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '/device:GPU:0'  # 指定使用GPU
-K.clear_session()  # Some memory clean-up
+
 
 history_dict = original_hist.history
 print(history_dict.keys())
