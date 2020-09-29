@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="913576ee-d683-49b2-8ca4-ddc66475f47a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/3_cifar100.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5_1_lstm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5_2_gru.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5_rnn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/autodecoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resnet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="913576ee-d683-49b2-8ca4-ddc66475f47a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
