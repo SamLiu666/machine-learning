@@ -93,9 +93,10 @@ path_to_file = r"E:\chrome download\paper\corpus\cmn-eng\cmn.txt"
 data = pd.read_table(path_to_file,header=None)
 
 # 2，处理数据
+# 2，处理数据
 eng, chi = bulid_text(data)
-input_tensor, input_tokenizer = tokenize(eng)
-target_tensor, target_tokenizer = tokenize(chi)
+input_tensor, inp_lang = tokenize(eng)
+target_tensor, targ_lang = tokenize(chi)
 
 # 查看英文，中文对照
 for i in range(20000,20005):
@@ -109,15 +110,11 @@ print("input_tensor length:",max_length(input_tensor), "\ntarget_tensor length: 
 # 采用 80 - 20 的比例切分训练集和验证集
 input_tensor_train, input_tensor_val, target_tensor_train, target_tensor_val = train_test_split(input_tensor, target_tensor, test_size=0.2)
 # 显示长度
-print(len(input_tensor_train), len(target_tensor_train), len(input_tensor_val), len(target_tensor_val))
-
-
-print ("Input Language; index to word mapping")
-convert(input_tokenizer, input_tensor_train[0])
-print ()
-print ("Target Language; index to word mapping")
-convert(target_tokenizer, target_tensor_train[0])
-
+#print(len(input_tensor_train), len(target_tensor_train), len(input_tensor_val), len(target_tensor_val))
+# 尝试实验不同大小的数据集
+num_examples = 30000
+# 计算目标张量的最大长度 （max_length）
+max_length_targ, max_length_inp = max_length(target_tensor), max_length(input_tensor)
 # test_= convert_word_tensor(target_tokenizer, "你好 我 是 飞天 怪物")
 # print(test_, type(test_))
 
@@ -127,8 +124,8 @@ BATCH_SIZE = 64
 steps_per_epoch = len(input_tensor_train)//BATCH_SIZE
 embedding_dim = 256
 units = 1024
-vocab_inp_size = len(input_tokenizer.word_index)+1
-vocab_tar_size = len(input_tokenizer.word_index)+1
+vocab_inp_size = len(inp_lang.word_index)+1
+vocab_tar_size = len(targ_lang.word_index)+1
 
 dataset = tf.data.Dataset.from_tensor_slices((input_tensor_train, target_tensor_train)).shuffle(BUFFER_SIZE)
 dataset = dataset.batch(BATCH_SIZE, drop_remainder=True)
@@ -136,99 +133,98 @@ dataset = dataset.batch(BATCH_SIZE, drop_remainder=True)
 example_input_batch, example_target_batch = next(iter(dataset))
 print(example_input_batch.shape, example_target_batch.shape)
 
-print("###################### Encoder: ")
-encoder = Encoder(vocab_inp_size, embedding_dim, units, BATCH_SIZE)
-# 样本输入
-sample_hidden = encoder.initialize_hidden_state()
-sample_output, sample_hidden = encoder(example_input_batch, sample_hidden)
-print ('Encoder output shape: (batch size, sequence length, units) {}'.format(sample_output.shape))
-print ('Encoder Hidden state shape: (batch size, units) {}'.format(sample_hidden.shape))
 
-print("###################### attention_layer: ")
-attention_layer = BahdanauAttention(10)
-attention_result, attention_weights = attention_layer(sample_hidden, sample_output)
+print("##################################\n ",
+      "vocab_inp_size, embedding_dim, units, BATCH_SIZE, vocab_tar_size",
+      vocab_inp_size, embedding_dim, units, BATCH_SIZE, vocab_tar_size)
 
-print("Attention result shape: (batch size, units) {}".format(attention_result.shape))
-print("Attention weights shape: (batch_size, sequence_length, 1) {}".format(attention_weights.shape))
 
-print("###################### decoder: ")
-decoder = Decoder(vocab_tar_size, embedding_dim, units, BATCH_SIZE)
+# 找出输入对应的翻译
+def evaluate(sentence):
+    attention_plot = np.zeros((max_length_targ, max_length_inp))
 
-sample_decoder_output, _, _ = decoder(tf.random.uniform((64, 1)),
-                                      sample_hidden, sample_output)
+    sentence = eng_preprocess_sent(sentence)
 
-print ('Decoder output shape: (batch_size, vocab size) {}'.format(sample_decoder_output.shape))
+    inputs = [inp_lang.word_index[i] for i in sentence.split(' ')]
+    inputs = tf.keras.preprocessing.sequence.pad_sequences([inputs],
+                                                           maxlen=max_length_inp,
+                                                           padding='post')
+    inputs = tf.convert_to_tensor(inputs)
 
-print("###################### 定义优化器和损失函数")
-optimizer = tf.keras.optimizers.Adam()
-loss_object = tf.keras.losses.SparseCategoricalCrossentropy(
-    from_logits=True, reduction='none')
+    result = ''
 
-def loss_function(real, pred):
-  mask = tf.math.logical_not(tf.math.equal(real, 0))
-  loss_ = loss_object(real, pred)
+    hidden = [tf.zeros((1, units))]
+    enc_out, enc_hidden = encoder(inputs, hidden)
 
-  mask = tf.cast(mask, dtype=loss_.dtype)
-  loss_ *= mask
+    dec_hidden = enc_hidden
+    dec_input = tf.expand_dims([targ_lang.word_index['<start>']], 0)
 
-  return tf.reduce_mean(loss_)
+    for t in range(max_length_targ):
+        predictions, dec_hidden, attention_weights = decoder(dec_input,
+                                                             dec_hidden,
+                                                             enc_out)
 
-print("###################### 检查点（基于对象保存）")
-checkpoint_dir = './training_checkpoints'
+        # 存储注意力权重以便后面制图
+        attention_weights = tf.reshape(attention_weights, (-1, ))
+        attention_plot[t] = attention_weights.numpy()
+
+        predicted_id = tf.argmax(predictions[0]).numpy()
+
+        result += targ_lang.index_word[predicted_id] + ' '
+
+        if targ_lang.index_word[predicted_id] == '<end>':
+            return result, sentence, attention_plot
+
+        # 预测的 ID 被输送回模型
+        dec_input = tf.expand_dims([predicted_id], 0)
+
+    return result, sentence, attention_plot
+
+# 注意力权重制图函数
+def plot_attention(attention, sentence, predicted_sentence):
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(1, 1, 1)
+    ax.matshow(attention, cmap='viridis')
+
+    fontdict = {'fontsize': 14}
+
+    ax.set_xticklabels([''] + sentence, fontdict=fontdict, rotation=90)
+    ax.set_yticklabels([''] + predicted_sentence, fontdict=fontdict)
+
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
+    ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
+
+    plt.show()
+
+# 翻译
+def translate(sentence):
+    result, sentence, attention_plot = evaluate(sentence)
+
+    print('Input: %s' % (sentence))
+    print('Predicted translation: {}'.format(result))
+
+    attention_plot = attention_plot[:len(result.split(' ')), :len(sentence.split(' '))]
+    plot_attention(attention_plot, sentence.split(' '), result.split(' '))
+
+
+checkpoint_dir = r'E:\chrome download\paper\training_checkpoints'
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
+print(checkpoint_prefix)
+
+print("#################### load weights ")
+optimizer = tf.keras.optimizers.Adam()
+encoder = Encoder(vocab_inp_size, embedding_dim, units, BATCH_SIZE)
+decoder = Decoder(vocab_tar_size, embedding_dim, units, BATCH_SIZE)
+# 恢复检查点目录 （checkpoint_dir） 中最新的检查点
 checkpoint = tf.train.Checkpoint(optimizer=optimizer,
                                  encoder=encoder,
                                  decoder=decoder)
+checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
 
-print("###################### 训练")
-@tf.function
-def train_step(inp, targ, enc_hidden):
-  loss = 0
+while True:
+    str = input("Enter Your Sentence: ")
+    translate(str)
 
-  with tf.GradientTape() as tape:
-    # 1.输入和编码器隐藏层状态传入编码器，返回 编码器输出 和 编码器隐藏层状态。
-    enc_output, enc_hidden = encoder(inp, enc_hidden)
-    dec_hidden = enc_hidden
-
-    dec_input = tf.expand_dims([target_tokenizer.word_index['<start>']] * BATCH_SIZE, 1)
-
-    # 教师强制 - 将目标词作为下一个输入
-    for t in range(1, targ.shape[1]):
-      # 将编码器输出 （enc_output） 传送至解码器
-      predictions, dec_hidden, _ = decoder(dec_input, dec_hidden, enc_output)
-
-      loss += loss_function(targ[:, t], predictions)
-
-      # 使用教师强制
-      dec_input = tf.expand_dims(targ[:, t], 1)
-
-  batch_loss = (loss / int(targ.shape[1]))
-  variables = encoder.trainable_variables + decoder.trainable_variables
-  gradients = tape.gradient(loss, variables)
-  optimizer.apply_gradients(zip(gradients, variables))
-  return batch_loss
-
-
-EPOCHS = 10
-
-for epoch in range(EPOCHS):
-  start = time.time()
-
-  enc_hidden = encoder.initialize_hidden_state()
-  total_loss = 0
-
-  for (batch, (inp, targ)) in enumerate(dataset.take(steps_per_epoch)):
-    batch_loss = train_step(inp, targ, enc_hidden)
-    total_loss += batch_loss
-
-    if batch % 100 == 0:
-        print('Epoch {} Batch {} Loss {:.4f}'.format(epoch + 1,
-                                                     batch,
-                                                     batch_loss.numpy()))
-  # # 每 2 个周期（epoch），保存（检查点）一次模型
-  # if (epoch + 1) % 2 == 0:
-  #   checkpoint.save(file_prefix = checkpoint_prefix)
-
-  print('Epoch {} Loss {:.4f}'.format(epoch + 1,
-                                      total_loss / steps_per_epoch))
-  print('Time taken for 1 epoch {} sec\n'.format(time.time() - start))
+    q = input("Stop Enter q")
+    if q == 'q':
+        break

@@ -43,7 +43,7 @@ class BahdanauAttention(tf.keras.layers.Layer):
 
     # 上下文向量 （context_vector） 求和之后的形状 == （批大小，隐藏层大小）
     context_vector = attention_weights * values
-    print("context_vector shape: ",context_vector.shape)
+    #print("context_vector shape: ",context_vector.shape)
     context_vector = tf.reduce_sum(context_vector, axis=1)
     # context_vector = tf.reduce_sum(context_vector, axis=0)
     return context_vector, attention_weights
@@ -73,15 +73,15 @@ class Decoder(tf.keras.Model):
 
     # x 在拼接 （concatenation） 后的形状 == （批大小，1，嵌入维度 + 隐藏层大小）
     x = tf.concat([tf.expand_dims(context_vector, 1), x], axis=-1)
-    print("Decoder x concat: ", x.shape)
+    #print("Decoder x concat: ", x.shape)
 
     # 将合并后的向量传送到 GRU
     output, state = self.gru(x)
-    print("Decoder state: ", state.shape)
+    #print("Decoder state: ", state.shape)
 
     # 输出的形状 == （批大小 * 1，隐藏层大小）
     output = tf.reshape(output, (-1, output.shape[2]))
-    print("Decoder output concat: ", output.shape)
+    #print("Decoder output concat: ", output.shape)
 
     # 输出的形状 == （批大小，vocab）
     x = self.fc(output)
@@ -97,3 +97,25 @@ if __name__ == '__main__':
     sample_output, sample_hidden = encoder(tf.random.normal([64,38]), sample_hidden)
     print('Encoder output shape: (batch size, sequence length, units) {}'.format(sample_output.shape))
     print('Encoder Hidden state shape: (batch size, units) {}'.format(sample_hidden.shape))
+    # print("###################### Encoder: ")
+    # encoder = Encoder(vocab_inp_size, embedding_dim, units, BATCH_SIZE)
+    # # 样本输入
+    # sample_hidden = encoder.initialize_hidden_state()
+    # sample_output, sample_hidden = encoder(example_input_batch, sample_hidden)
+    # print ('Encoder output shape: (batch size, sequence length, units) {}'.format(sample_output.shape))
+    # print ('Encoder Hidden state shape: (batch size, units) {}'.format(sample_hidden.shape))
+    #
+    # print("###################### attention_layer: ")
+    # attention_layer = BahdanauAttention(10)
+    # attention_result, attention_weights = attention_layer(sample_hidden, sample_output)
+    #
+    # print("Attention result shape: (batch size, units) {}".format(attention_result.shape))
+    # print("Attention weights shape: (batch_size, sequence_length, 1) {}".format(attention_weights.shape))
+    #
+    # print("###################### decoder: ")
+    # decoder = Decoder(vocab_tar_size, embedding_dim, units, BATCH_SIZE)
+    #
+    # sample_decoder_output, _, _ = decoder(tf.random.uniform((64, 1)),
+    #                                       sample_hidden, sample_output)
+    #
+    # print ('Decoder output shape: (batch_size, vocab size) {}'.format(sample_decoder_output.shape))
