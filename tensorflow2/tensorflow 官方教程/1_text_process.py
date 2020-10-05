@@ -135,3 +135,100 @@ dataset = dataset.batch(BATCH_SIZE, drop_remainder=True)
 
 example_input_batch, example_target_batch = next(iter(dataset))
 print(example_input_batch.shape, example_target_batch.shape)
+
+print("###################### Encoder: ")
+encoder = Encoder(vocab_inp_size, embedding_dim, units, BATCH_SIZE)
+# 样本输入
+sample_hidden = encoder.initialize_hidden_state()
+sample_output, sample_hidden = encoder(example_input_batch, sample_hidden)
+print ('Encoder output shape: (batch size, sequence length, units) {}'.format(sample_output.shape))
+print ('Encoder Hidden state shape: (batch size, units) {}'.format(sample_hidden.shape))
+
+print("###################### attention_layer: ")
+attention_layer = BahdanauAttention(10)
+attention_result, attention_weights = attention_layer(sample_hidden, sample_output)
+
+print("Attention result shape: (batch size, units) {}".format(attention_result.shape))
+print("Attention weights shape: (batch_size, sequence_length, 1) {}".format(attention_weights.shape))
+
+print("###################### decoder: ")
+decoder = Decoder(vocab_tar_size, embedding_dim, units, BATCH_SIZE)
+
+sample_decoder_output, _, _ = decoder(tf.random.uniform((64, 1)),
+                                      sample_hidden, sample_output)
+
+print ('Decoder output shape: (batch_size, vocab size) {}'.format(sample_decoder_output.shape))
+
+print("###################### 定义优化器和损失函数")
+optimizer = tf.keras.optimizers.Adam()
+loss_object = tf.keras.losses.SparseCategoricalCrossentropy(
+    from_logits=True, reduction='none')
+
+def loss_function(real, pred):
+  mask = tf.math.logical_not(tf.math.equal(real, 0))
+  loss_ = loss_object(real, pred)
+
+  mask = tf.cast(mask, dtype=loss_.dtype)
+  loss_ *= mask
+
+  return tf.reduce_mean(loss_)
+
+print("###################### 检查点（基于对象保存）")
+checkpoint_dir = './training_checkpoints'
+checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
+checkpoint = tf.train.Checkpoint(optimizer=optimizer,
+                                 encoder=encoder,
+                                 decoder=decoder)
+
+print("###################### 训练")
+@tf.function
+def train_step(inp, targ, enc_hidden):
+  loss = 0
+
+  with tf.GradientTape() as tape:
+    # 1.输入和编码器隐藏层状态传入编码器，返回 编码器输出 和 编码器隐藏层状态。
+    enc_output, enc_hidden = encoder(inp, enc_hidden)
+    dec_hidden = enc_hidden
+
+    dec_input = tf.expand_dims([target_tokenizer.word_index['<start>']] * BATCH_SIZE, 1)
+
+    # 教师强制 - 将目标词作为下一个输入
+    for t in range(1, targ.shape[1]):
+      # 将编码器输出 （enc_output） 传送至解码器
+      predictions, dec_hidden, _ = decoder(dec_input, dec_hidden, enc_output)
+
+      loss += loss_function(targ[:, t], predictions)
+
+      # 使用教师强制
+      dec_input = tf.expand_dims(targ[:, t], 1)
+
+  batch_loss = (loss / int(targ.shape[1]))
+  variables = encoder.trainable_variables + decoder.trainable_variables
+  gradients = tape.gradient(loss, variables)
+  optimizer.apply_gradients(zip(gradients, variables))
+  return batch_loss
+
+
+EPOCHS = 10
+
+for epoch in range(EPOCHS):
+  start = time.time()
+
+  enc_hidden = encoder.initialize_hidden_state()
+  total_loss = 0
+
+  for (batch, (inp, targ)) in enumerate(dataset.take(steps_per_epoch)):
+    batch_loss = train_step(inp, targ, enc_hidden)
+    total_loss += batch_loss
+
+    if batch % 100 == 0:
+        print('Epoch {} Batch {} Loss {:.4f}'.format(epoch + 1,
+                                                     batch,
+                                                     batch_loss.numpy()))
+  # # 每 2 个周期（epoch），保存（检查点）一次模型
+  # if (epoch + 1) % 2 == 0:
+  #   checkpoint.save(file_prefix = checkpoint_prefix)
+
+  print('Epoch {} Loss {:.4f}'.format(epoch + 1,
+                                      total_loss / steps_per_epoch))
+  print('Time taken for 1 epoch {} sec\n'.format(time.time() - start))
