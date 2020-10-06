@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a18a23b-db65-4294-aea7-5355c1d153f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/2_translate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_text_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/1_text_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_attention.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/1_text_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+            <state relative-caret-position="666">
+              <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#7325#7742#0" />
@@ -245,13 +242,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="885" y="0" width="1042" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24800797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29791895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29791895" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20390455" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -327,8 +325,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/1_text_process.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+        <state relative-caret-position="666">
+          <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#7325#7742#0" />
