@@ -14,12 +14,17 @@ int maxSubs(const int A[], int N) {
 }
 
 
+// Definition for singly-linked list.
+struct SinglyListNode {
+	int val;
+	SinglyListNode* next;
+	SinglyListNode(int x) : val(x), next(NULL) {}
+};
+
 int main()
 {
 	/* 我的第一个 C 程序 */
 	printf("Hello, World! \n");
-	int A[] = { 4, -3, 5, -2, -1, 2, 6, -2};
-	int N = 8;
-	printf(maxSubs(A[8], N));
+
 	return 0;
 }
