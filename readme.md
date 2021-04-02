@@ -10,6 +10,7 @@
   - K近邻  K Neaerest Neighbour
   - 回归  Regression
   - 支持向量机 Support Vector Machines
+  - 集成学习
 - 聚类 Clustering 无监督学习 Unsupervised machine learning
   - 聚类 clustering problem
   - 相似度量 Similarity measures
@@ -30,7 +31,6 @@
 | C4.5 | 信息增益率 |
 | CART | 基尼系数   |
 
-![1](http://www.learnbymarketing.com/wp-content/uploads/2016/02/entropy-formula.png)
 ![2](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYHkcmZKKp2sJN1HpHvw-NgqbD9EnapnbXozXRgajrSGvEnYy&s)
 
 ### 三要素
@@ -80,18 +80,18 @@ $$ Gini(D, A=a) = \frac{D_1}{D}Gini(D_1) + \frac{D_2}{D} Gini(D_2) $$
 
 应用NLP，中的N-gram， 前提是要时间相互独立，概率之间才可连乘，一般将连乘转为log，连加
 
-条件概率：  $$ P(X|Y) = \frac{P(X,Y)}{P(Y)} $$
+条件概率：  $P(X|Y) = \frac{P(X,Y)}{P(Y)}$
 
 - 先验概率：表示事件发生前的预判概率，一般都是单独事件发生的概率，如 P(A)
 - 后验概率：依据数据类型可分为三类：基于先验概率求得的**反向条件概率**，形式上与条件概率相同（若 `P(X|Y)` 为正向，则 `P(Y|X)` 为反向）
 
-贝叶斯公式： $$ P(Y|X) = \frac{P(X|Y) P(Y)}{P(X)} \ $$
+贝叶斯公式： $P(Y|X) = \frac{P(X|Y) P(Y)}{P(X)}$
 
 - P(Y) 叫做**先验概率**，意思是事件X发生之前，我们对事件Y发生的一个概率的判断
 - P(Y|X) 叫做**后验概率**，意思是时间X发生之后，我们对事件Y发生的一个概率的重新评估
 - P(Y,X) 叫做**联合概率**， 意思是事件X与事件Y同时发生的概率。
 
-条件独立假设： $$ P(x|c) = p(x_1, x_2, \cdots x_n | c) = \prod_{i=1}^Np(x_i | c) $$  -》简化运算
+条件独立假设： $P(x|c) = p(x_1, x_2, \cdots x_n | c) = \prod_{i=1}^Np(x_i | c)$  简化运算
 
 
 
@@ -112,11 +112,9 @@ P(x_{i}|y_{k})=\frac{N_{y_{k},x_{i}}+\alpha}{N_{y_{k}}+n\alpha}
 
 伯努利模型中，条件概率P(xi|yk)P(xi|yk)的计算方式是：
 
-当事件发生过，即特征值xixi为1时，$$P(xi|yk)=P(xi=1|yk)P(xi|yk)=P(xi=1|yk)；$$
+当事件发生过，即特征值xixi为1时，$P(xi|yk)=P(xi=1|yk)P(xi|yk)=P(xi=1|yk)；$
 
-当事件未发生过，即特征值xixi为0时，$$P(xi|yk)=1−P(xi=1|yk)P(xi|yk)=1−P(xi=1|yk)；$$
-
-
+当事件未发生过，即特征值xixi为0时，$P(xi|yk)=1−P(xi=1|yk)P(xi|yk)=1−P(xi=1|yk)；$
 
 ## K近邻  K Neaerest Neighbour
 
@@ -151,9 +149,9 @@ K 离谁近就取谁的值
 
 求解：
 
-$$ J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right] $$
+$J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right]$
 
- $$ J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right] + \frac{\lambda}{2m} \sum_{j=1}^{m}\theta_j^2 $$  （L2 正则化）
+ $J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right] + \frac{\lambda}{2m} \sum_{j=1}^{m}\theta_j^2$  （L2 正则化）
 
 使用梯度下降算法去求解最小值时对应的参数
 
@@ -163,25 +161,18 @@ $$ J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) +
 
 线性回归其参数计算方式为**最小二乘法**， 逻辑回归其参数更新方式为**极大似然估计**。
 
-- sigmoid : $$ g(z) = \frac{1}{1+e^{-z}} \ g'(z) = g(z)(1-g(z)) $$
-- LR 的定义： $$ h_{\theta}(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^Tx}} $$
-- 损失函数： $$ J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right] $$
+- sigmoid : $g(z) = \frac{1}{1+e^{-z}} \ g'(z) = g(z)(1-g(z))$
+- LR 的定义： $h_{\theta}(x) = g(\theta^Tx) = \frac{1}{1 + e^{-\theta^Tx}}$
+- 损失函数： $J(\theta) = - \frac{1}{m} \left[ \sum_{i=1}^m y^{(i)}log(h_\theta(x^{(i)})) + (1-y^{(i)}) log(1 - h_\theta(x^{(i)})) \right]$
 
-- 岭回归本质上是 **线性回归 + L2 正则化**。 $$ \hat{h}*{\theta}(x) = h*{\theta}(x) + \lambda \sum_i w_i^2 $$
+- 岭回归本质上是 **线性回归 + L2 正则化**。 $\hat{h}*{\theta}(x) = h*{\theta}(x) + \lambda \sum_i w_i^2$
 
-- Lasso 回归的本质是 **线性回归 + L1 正则化**。 $$ \hat{h}*{\theta}(x) = h*{\theta}(x) + \lambda \sum_i |w_i| $$
+- Lasso 回归的本质是 **线性回归 + L1 正则化**。 $\hat{h}*{\theta}(x) = h*{\theta}(x) + \lambda \sum_i |w_i|$
 - ElasticNet 回归 本质上是线性回归 + L1正则化 + L2 正则化。
 
 最小二乘法估计：
 
 $$ X = (x_1, ..., x_N)^T \ Y = (y_1, ..., y_N)^T $$
-
-$$ \begin{align} L(w) &= \sum_{i=1}^N ||w^Tx_i - y_i ||^2 \ &= \sum_{i=1}^N (w^Tx_i - y_i)^2 \ &= \begin{pmatrix} w^Tx_1 - y_1 & ... & w^Tx_N - y_N \end{pmatrix} \begin{pmatrix} w^Tx_1 - y_1 \ ... \ w^Tx_N - y_N \end{pmatrix} \end{align} $$
-
-其中有： $$ \begin{align} \begin{pmatrix} w^Tx_1 - y_1 & ... & w^Tx_N - y_N \end{pmatrix} = w^T \begin{pmatrix} x_1 & ... & x_N \end{pmatrix} - \begin{pmatrix} y_1 & ... & y_N \end{pmatrix} &= w^TX^T - Y^T \end{align} $$ $$\begin{align} \begin{pmatrix} w^Tx_1 - y_1 \ ... \ w^Tx_N - y_N \end{pmatrix} = \begin{pmatrix} x_1 \ ... \ x_N \end{pmatrix}w - \begin{pmatrix} y_1 \ ... \ y_N \end{pmatrix} = Xw-Y \end{align}$$
-
-那 么，最终就得到： $$ \begin{align} L(w) = (w^TX^T - Y^T)(Xw + Y) \ &= w^TX^TXw - w^TX^TY - Y^TXw - Y^TY \end{align} $$ 考虑到 $w^TX^TY$ 与 $Y^TXw$ 的结果其实都是一维实数且二者为转置，因此，二者的值相等， 那么就有： $$ L(w) = w^TX^TXw - 2w^TX^TY - Y^TY $$ 那么就有： $$ \hat{w} = argmin , L(w) \ \frac{\delta L(w)}{\delta w} = 2X^TXw - 2X^TY = 0 $$ 从而就得到： $$ w = (X^TX)^{-1}X^TY $$
-
 
 
 ## 支持向量机 Support Vector Machines
@@ -196,9 +187,6 @@ SVM 三宝： **间隔，对偶，核技巧**。它属于**判别模型**，可�
 
 ![margin](https://static.packt-cdn.com/products/9781783555130/graphics/3547_03_07.jpg)
 
-核方法，超平面映射
-
-![kernel](http://www.aionlinecourse.com/uploads/tutorials/2019/07/11_21_kernel_svm_3.png)
 
 核 将低纬度的数据，转换到高维度的空间 ![和函数](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTodZptqcRor0LGo8Qn7_kJB9n9BACMt6jgIPZ4C3g_rgh_uSRZLQ&s)
 
@@ -217,9 +205,27 @@ $D_0$ 和 $D_1$ 是 n 维空间中的两个点集， 如果存在 n 维向量 $w
 - 两类样本分别分割在该超平面的两侧
 - 两侧距离超平面最近的样本点到超平面的距离被最大化了
 
+## 集成学习
+**定义**：通过构建并结合多个学习器来完成学习任务
+
+### boosting
+**定义**：集成学习器之间互相存在依赖关系，必须串行。对基学习器错误的样本给予更多的关注，基于调整后的训练分布训练下一个分类器
+
+#### Adaboost
+**定义**：通过改变训练样本的权重，学习多个分类器，并将这些分类器进行线性组合，提高分类性能。
+
+#### Boosted Decision Tree
+提升决策树是指以分类与回归树（CART）为基本分类器的提升方法，被认为是统计学习中性能最好的方法之一。
+Gradient Boosting Decision Tree, GBDT
+
+
+### bagging
+**定于**：个体学习器之间不存在强依赖，可以并行
+
+
 # 无监督学习
 
-**定义** 从无标签的数据中获取信息  $$ f: x  {->} y$$ ，发现输入之间的练习，不依靠任何学习过程中的任何反馈
+**定义** 从无标签的数据中获取信息  $f: x  {->} y$ ，发现输入之间的练习，不依靠任何学习过程中的任何反馈
 
 分类
 
@@ -241,7 +247,7 @@ $D_0$ 和 $D_1$ 是 n 维空间中的两个点集， 如果存在 n 维向量 $w
 
 ### （线性）编码
 
-给定一组基向量 $$A = [a_1, a_2, ..., a_M]$$ 将输入样本表示为基向量组成的线性组合 $$ x=Az$$ (A-dictionary, z-encoding)
+给定一组基向量 $A = [a_1, a_2, ..., a_M]$ 将输入样本表示为基向量组成的线性组合 $x=Az$ (A-dictionary, z-encoding)
 
 * 完备性：M个向量支撑M维的欧式空间
 * 冗余：M > D， M个基向量支撑 D维空间
@@ -283,7 +289,7 @@ N - N个训练样本， K - 落入R区域的样本数量服从二项分布， �
 
 ### 相似度量 Similarity measures
 
-$$ s(x_i, x_j) = - ||x_i - x_j||^{2} $$  相似特性用负数的距离平方表示
+$s(x_i, x_j) = - ||x_i - x_j||^{2}$  相似特性用负数的距离平方表示
 
 $$ r_{i,k} \leftarrow s_(x_i, x_k) - \max_{k' \neq k} \left\{ a_{i,k'} + s(x_i, x_k') \right\} $$  
 
@@ -483,6 +489,8 @@ GRU 抛弃了 LSTM 中的 ![[公式]](https://www.zhihu.com/equation?tex=h_t) �
 # 强化学习
 
 reinforcement learning:  通过环境判断获取信息是否正确，不断调整获取答案的模型
+
+Q-learning
 
 # 相关概念
 
